@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "151621133334",
+    "project_id": "foodapp-4d5ef",
+    "storage_bucket": "foodapp-4d5ef.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:151621133334:android:8a7d6150b50f3fa513c137",
+        "android_client_info": {
+          "package_name": "com.orbinobrian.onecall"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "151621133334-0492sdonlck8ed99n5trn0urjiq4gjk5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUAQXCLkCMNt38cuusdoFw9HLDmT5q9Ec"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "151621133334-0492sdonlck8ed99n5trn0urjiq4gjk5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
