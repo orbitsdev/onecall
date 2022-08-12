@@ -24,12 +24,8 @@ class BoardingContent extends StatelessWidget {
       child: Column(
         children: [
 
-            Container(
-              height: MediaQuery.of(context).size.height * 0.48,
-              width: MediaQuery.of(context).size.width,
-              child: Lottie.asset(Assistant().fromImages('90016-order-food.json'), fit: BoxFit.cover,),
-            ),
-
+           
+ Lottie.asset(Assistant().fromImages(imagepath), fit: BoxFit.cover, height: MediaQuery.of(context).size.height * 0.40 ),
             VerticalSpace(value: 16),
             Center(
               child: Container(

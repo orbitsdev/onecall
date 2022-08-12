@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:onecall/assistant/assistant.dart';
-import 'package:onecall/auth/auth_controller.dart';
+import 'package:onecall/controllers/auth_controller.dart';
+import 'package:onecall/auth/home_screen.dart';
 import 'package:onecall/constant/controllers.dart';
 import 'package:onecall/constant/ui.dart';
 import 'package:onecall/helperwidgets/horizontal_space.dart';
 import 'package:onecall/helperwidgets/vertical_space.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SigninScreen extends StatelessWidget {
   const SigninScreen({Key? key}) : super(key: key);
@@ -32,7 +35,7 @@ class SigninScreen extends StatelessWidget {
               ),
               GestureDetector(
                 onTap: (){
-                  authcontroller.signInWithGoogle();
+                    authcontroller.sigInWithGoogle();
                 },
                 child: Container(
                   decoration: BoxDecoration(
@@ -59,8 +62,18 @@ class SigninScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-              )
+              ),
+
               
+              ElevatedButton(onPressed: () async {
+                 Get.offAll(()=> HomeScreen()); 
+               }, child: Text('Explore')),
+              
+              ElevatedButton(onPressed: () async {
+                  final pref =  await SharedPreferences.getInstance();
+    pref.setBool("isOnBoardingFinish", false);
+    print(pref.getBool('isOnBoardingFinish'));
+               }, child: Text('Remove sharepre')),
             ],
           ),
         ),

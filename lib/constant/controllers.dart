@@ -1,6 +1,6 @@
 
 
-import 'package:onecall/auth/auth_controller.dart';
+import 'package:onecall/controllers/auth_controller.dart';
 
 AuthController  authcontroller =  AuthController.instance;
 

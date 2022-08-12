@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:onecall/auth/home_screen.dart';
+import 'package:onecall/auth/signin_screen.dart';
 
 import 'package:onecall/constant/ui.dart';
 import 'package:onecall/helperwidgets/horizontal_space.dart';
@@ -50,8 +51,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   void toHomePage() async {
     final pref =  await SharedPreferences.getInstance();
-    pref.setBool("is_onboarding_finish", true);
-    Get.off(() => const HomeScreen());
+    pref.setBool("isOnBoardingFinish", true);
+    Get.off(() => const SigninScreen());
   }
 
   void setPage(int index) {
@@ -86,7 +87,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     child: Text(
                       'Skip',
                       style: bodytext_h2.copyWith(
-                          color: Colors.black.withOpacity(0.50), fontWeight: FontWeight.normal),
+                          color: Colors.black.withOpacity(0.75), fontWeight: FontWeight.normal),
                     )))
           ],
         ),
@@ -107,6 +108,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             // ],
             ),
         bottomSheet: Container(
+          
           padding: EdgeInsets.symmetric(
             vertical: 12,
             horizontal: 24,

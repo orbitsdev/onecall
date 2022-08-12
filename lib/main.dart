@@ -2,14 +2,16 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:onecall/auth/auth_controller.dart';
+import 'package:onecall/bindings/auth_binding.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+import 'package:onecall/controllers/auth_controller.dart';
 import 'package:onecall/auth/error_screen.dart';
 import 'package:onecall/auth/home_screen.dart';
 import 'package:onecall/auth/signin_screen.dart';
 import 'package:onecall/constant/controllers.dart';
 import 'package:onecall/loaders/loading_screen.dart';
 import 'package:onecall/onboard/onboarding_screen.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 Future<void> main() async {
 
@@ -20,9 +22,14 @@ Future<void> main() async {
 
 
   });
-  final pref =  await SharedPreferences.getInstance();
-  final isOnBoardingFinish = pref.getBool("is_onboarding_finish") ?? false;  
-  runApp( const OneCall());
+
+  final prefs = await SharedPreferences.getInstance();
+  final bool isboardingFinish = prefs.getBool('isOnBoardingFinish') ?? false;
+  print(isboardingFinish);
+
+
+
+  runApp( OneCall(isBoardingShowedOnce:  isboardingFinish));
 }
 
 
@@ -30,20 +37,20 @@ Future<void> main() async {
 
 
 class OneCall extends StatelessWidget {
- const OneCall({ Key? key }) : super(key: key);
+final bool isBoardingShowedOnce;
+  const OneCall({
+    Key? key,
+    required this.isBoardingShowedOnce,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context){
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home:
-      // authcontroller.authStateHandler(),
-      // LoadingScreen(),
-      //ErrorScreen(),
-      OnboardingScreen(),
+      home: isBoardingShowedOnce ? SigninScreen() :  OnboardingScreen(),
       getPages: [
-        GetPage(name: SigninScreen.screenName,  page: ()=> const SigninScreen()),
-        GetPage(name: HomeScreen.screenName , page: ()=> const HomeScreen()),
+        GetPage(name: SigninScreen.screenName,  page: ()=> const SigninScreen(), binding: AuthBinding()),
+        GetPage(name: HomeScreen.screenName , page: ()=> const HomeScreen(), binding: AuthBinding()),
       ],
     );
   }

@@ -23,7 +23,7 @@ class SecondaryRoundedButton extends StatelessWidget {
       },
       child: Text(
         label,
-        style: bodytext_h1.copyWith(fontWeight: FontWeight.normal, color: Colors.black.withOpacity(0.50)),
+        style: bodytext_h1.copyWith(fontWeight: FontWeight.normal, color: Colors.black.withOpacity(0.75)),
       ),
     );
   }
