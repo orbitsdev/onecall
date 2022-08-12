@@ -15,7 +15,9 @@ class PrimaryRoundedButton extends StatelessWidget {
   Widget build(BuildContext context){
     return ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                        shape: StadiumBorder(),
+                         shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12)
+          ),
                         primary: primary,
                         padding:
                             EdgeInsets.symmetric(horizontal: 20, vertical: 14),

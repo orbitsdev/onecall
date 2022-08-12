@@ -14,17 +14,17 @@ class SecondaryRoundedButton extends StatelessWidget {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
         elevation: 0,
-          shape: StadiumBorder(),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12)
+          ),
           primary: secondary,
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 14),
           textStyle: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
       onPressed: () {
         funtion();
       },
-      child: Text(
-        label,
-        style: bodytext_h1.copyWith(fontWeight: FontWeight.normal, color: Colors.black.withOpacity(0.75)),
-      ),
+      child: Icon(Icons.arrow_back, color: Colors.black.withOpacity(0.75)),
+      
     );
   }
 }

@@ -75,20 +75,30 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          toolbarHeight: 40,
           elevation: 0,
           backgroundColor: Colors.transparent,
           actions: [
-            Padding(
-                padding: EdgeInsets.only(right: 9),
-                child: TextButton(
-                    onPressed: () {
-                        skip();
-                    },
-                    child: Text(
-                      'Skip',
-                      style: bodytext_h2.copyWith(
-                          color: Colors.black.withOpacity(0.75), fontWeight: FontWeight.normal),
-                    )))
+            GestureDetector(
+              onTap: (){
+                skip();
+              },
+              child: Container(
+                margin: EdgeInsets.only( right:24),
+            
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+               
+                ),
+                child: Center(
+                  child: Text(
+                          'Skip',
+                          style: bodytext_h2.copyWith(
+                              color: Colors.black.withOpacity(0.75), fontWeight: FontWeight.normal),
+                        ),
+                ),
+              ),
+            )
           ],
         ),
         body: PageView(
@@ -126,7 +136,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 child: SizedBox(
                   child: PrimaryRoundedButton(
                       funtion: isLastPage ? toHomePage : next,
-                      label: isLastPage ? 'Get started' : 'Next'),
+                      label: isLastPage ? 'Get started' : 'Continue'),
                 ),
               ),
             ],

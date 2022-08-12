@@ -1,12 +1,29 @@
 
 
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 
-Color primary = const Color(0xFFFF6B03);
-Color secondary = const Color(0xFFF2F2F2);
+
+ThemeData apptheme = ThemeData(
+  appBarTheme: AppBarTheme(
+    systemOverlayStyle: SystemUiOverlayStyle.light
+    
+  )
+  
+);
+
+Color primary = Color(0xFFFF6B03);
+Color secondary = const Color(0xFFECEDEF);
 Color background = const Color(0xFFFF6B03);
+Color purewhite = const Color(0xFFFFFFFF);
 
+/// button
+/// text
+Color greytext =  Colors.black.withOpacity(0.50);
+Color greybutton =  Color(0xffECEDEF);
+/// 
 double screenPadding = 24;
 
 ///heading
