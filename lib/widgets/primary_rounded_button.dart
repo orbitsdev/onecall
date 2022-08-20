@@ -29,7 +29,7 @@ class PrimaryRoundedButton extends StatelessWidget {
                     child: Text(
                       label,
                       style:
-                          bodytext_h1.copyWith(fontWeight: FontWeight.normal),
+                          bodytext_h1.copyWith(fontWeight: FontWeight.w700),
                     ),
                   );
   }

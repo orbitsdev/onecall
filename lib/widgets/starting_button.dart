@@ -24,11 +24,11 @@ class StartingButton extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 12,),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(12)),
+        borderRadius: primaryradius,
       color: bgcolor ?? primary,
       // border: Border.all(width: 0.5, color: Colors.black.withOpacity(0.75))
       ),
-      child: Center(child: Text(label, style: bodytext_h2.copyWith(fontWeight: FontWeight.bold, color: textcolor,)),)
+      child: Center(child: Text(label, style: bodytext_h1.copyWith(fontWeight: FontWeight.w700, color: textcolor,)),)
     );
   }
 }

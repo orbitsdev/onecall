@@ -19,7 +19,7 @@ class SecondaryRoundedButton extends StatelessWidget {
           ),
           primary: secondary,
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 14),
-          textStyle: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+          textStyle: TextStyle(fontSize: 30, fontWeight: FontWeight.w700)),
       onPressed: () {
         funtion();
       },

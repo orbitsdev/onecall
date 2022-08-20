@@ -55,9 +55,10 @@ final bool isBoardingShowedOnce;
     return GetMaterialApp(
       //theme: apptheme,
       debugShowCheckedModeBanner: false,
-      home: 
+      home:
+      SigninScreen(),
       //StartingScreen(),
-      OnboardingScreen(), 
+      //OnboardingScreen(), 
       //isBoardingShowedOnce ? SigninScreen() :  OnboardingScreen(),
       getPages: [
         GetPage(name: StartingScreen.screenName,  page: ()=> StartingScreen(),),

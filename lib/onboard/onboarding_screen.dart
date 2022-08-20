@@ -4,9 +4,11 @@ import 'package:onecall/auth/home_screen.dart';
 import 'package:onecall/auth/signin_screen.dart';
 
 import 'package:onecall/constant/ui.dart';
+import 'package:onecall/dialogs/pop.dart';
 import 'package:onecall/helperwidgets/horizontal_space.dart';
 import 'package:onecall/onboard/boarding_content.dart';
 import 'package:onecall/sample/sampledata.dart';
+import 'package:onecall/starting_screen.dart';
 import 'package:onecall/widgets/primary_rounded_button.dart';
 import 'package:onecall/widgets/secondary_rounded_button.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -26,6 +28,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   void initState() {
     controller = PageController(initialPage: _pageindex);
+    
     super.initState();
   }
 
@@ -52,7 +55,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   void toHomePage() async {
     final pref =  await SharedPreferences.getInstance();
     pref.setBool("isOnBoardingFinish", true);
-    Get.off(() => const SigninScreen());
+    Get.off(() => const StartingScreen());
   }
 
   void setPage(int index) {
