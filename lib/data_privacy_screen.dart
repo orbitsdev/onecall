@@ -1,25 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:onecall/constant/controllers.dart';
 import 'package:onecall/constant/ui.dart';
+import 'package:onecall/controllers/assistant_controller.dart';
 import 'package:onecall/helperwidgets/vertical_space.dart';
+import 'package:onecall/widgets/primary_rounded_button.dart';
 import 'package:onecall/widgets/starting_button.dart';
 
-class TermsAndConditionScreen extends StatelessWidget {
-const TermsAndConditionScreen({ Key? key }) : super(key: key);
+class DataPrivacyScreen extends StatelessWidget {
+  
+const DataPrivacyScreen({ Key? key }) : super(key: key);
 
-static String screenName = "/termsandcondtion";
+
+static String screenName = "/dataprivacy";
   @override
   Widget build(BuildContext context){
-     return Scaffold(
+    return Scaffold(
       
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
 
         leading:  IconButton(onPressed: (){
-            Get.back();
-
-         }, icon: Icon(Icons.arrow_back_outlined, color: primary,) )
+          Get.back();
+         }, icon: Icon(Icons.arrow_back, color: primary,) )
         
       ),
       body: Container(
@@ -30,7 +34,7 @@ static String screenName = "/termsandcondtion";
           children: [
             VerticalSpace(value: 4),
 
-            Text('Terms & Condition', style: header_h3.copyWith(
+            Text('Data Privacy', style: header_h3.copyWith(
                 color: black_75,
                 fontWeight: FontWeight.w600
             ),),
@@ -57,7 +61,7 @@ static String screenName = "/termsandcondtion";
             onTap: (){
               Get.back();
             },
-            child: StartingButton(label: 'Continue', textcolor: purewhite, )),
+            child: StartingButton(label: 'Agree and continue', textcolor: purewhite, )),
         ],),
       ),
     );

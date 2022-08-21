@@ -9,47 +9,50 @@ import 'package:onecall/helperwidgets/horizontal_space.dart';
 class WithlogoButton extends StatelessWidget {
 
   final Function function;
+  final bool hasborder;
+  final String label;
   const WithlogoButton({
     Key? key,
     required this.function,
+    required this.hasborder,
+    required this.label,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context){
     return Material(
-      color: Colors.transparent,
-      child: InkWell(
-        onTap: (){
-          function();
-        },
-        child: Container(
-          height: 60,
-          decoration: BoxDecoration(
-          color: purewhite,
-          borderRadius: BorderRadius.circular(12),
-          border: Border.all(
-            width: 2,
-            
-            color: Colors.black.withOpacity(0.75),
-          )
+                    color: Colors.transparent,
+                    child: InkWell(
+                      onTap: () {},
+                      child: Container(
+                        height: 60,
+                        decoration: BoxDecoration(
+                          color: primary.withOpacity(0.12),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              child: SvgPicture.asset(
+                                Assistant()
+                                    .fromImages('cdnlogo.com_google-icon.svg'),
+                                width: 24,
+                                height: 24,
+                              ),
+                            ),
+                            HorizontalSpace(value: 12),
+                            Text(
+                              label,
+                              style: bodytext_h1.copyWith(
+                                  fontWeight: FontWeight.w700),
+                            ),
 
-          ),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-
-                child: SvgPicture.asset(Assistant().fromImages('cdnlogo.com_google-icon.svg'), width: 24, height:24,),
-              ),
-              HorizontalSpace(value: 12),
-
-              Text('Signin with google', style: bodytext_h1.copyWith(fontWeight: FontWeight.w700),),
-            ],
-          ),
-        ),
-      ),
-    );
+                          ],
+                        ),
+                      ),
+                    ),
+                  );
   }
 }

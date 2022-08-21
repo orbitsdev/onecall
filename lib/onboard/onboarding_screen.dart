@@ -81,7 +81,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           toolbarHeight: 40,
           elevation: 0,
           backgroundColor: Colors.transparent,
-          actions: [
+          actions: isLastPage ==false ?  [
             GestureDetector(
               onTap: (){
                 skip();
@@ -102,7 +102,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ),
               ),
             )
-          ],
+          ] :  null,
         ),
         body: PageView(
             onPageChanged: (index) {

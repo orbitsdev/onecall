@@ -14,7 +14,7 @@ final Color? bgcolor;
   Widget build(BuildContext context){
     return Container(
       width: width,
-      height: 1.5,
+      height: 1.3,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(100),
       color: bgcolor ?? Colors.black,

@@ -3,8 +3,11 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:onecall/auth/signup_screen.dart';
 import 'package:onecall/bindings/auth_binding.dart';
 import 'package:onecall/constant/ui.dart';
+import 'package:onecall/controllers/assistant_controller.dart';
+import 'package:onecall/data_privacy_screen.dart';
 import 'package:onecall/starting_screen.dart';
 import 'package:onecall/terms_and_condition_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -26,6 +29,7 @@ Future<void> main() async {
   await Firebase.initializeApp().then((value) { 
 
     Get.put(AuthController(), permanent: true);
+    Get.put(AssistantController(), permanent: true);
 
 
   });
@@ -53,17 +57,22 @@ final bool isBoardingShowedOnce;
   @override
   Widget build(BuildContext context){
     return GetMaterialApp(
-      //theme: apptheme,
+      theme: apptheme,
       debugShowCheckedModeBanner: false,
       home:
-      SigninScreen(),
+      //DataPrivacyScreen(),
+      //TermsAndConditionScreen(),
+     // SignupScreen(),
+     SigninScreen(),
       //StartingScreen(),
-      //OnboardingScreen(), 
+     // OnboardingScreen(), 
       //isBoardingShowedOnce ? SigninScreen() :  OnboardingScreen(),
       getPages: [
         GetPage(name: StartingScreen.screenName,  page: ()=> StartingScreen(),),
+        GetPage(name: DataPrivacyScreen.screenName,  page: ()=> DataPrivacyScreen(),),
         GetPage(name: TermsAndConditionScreen.screenName,  page: ()=> TermsAndConditionScreen(),),
         GetPage(name: SigninScreen.screenName,  page: ()=> const SigninScreen(), binding: AuthBinding()),
+        GetPage(name: SignupScreen.screenName,  page: ()=> const SignupScreen(), binding: AuthBinding()),
         GetPage(name: HomeScreen.screenName , page: ()=> const HomeScreen(), binding: AuthBinding()),
       ],
     );

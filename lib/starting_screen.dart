@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:onecall/assistant/assistant.dart';
 import 'package:onecall/auth/signin_screen.dart';
+import 'package:onecall/auth/signup_screen.dart';
 import 'package:onecall/constant/ui.dart';
 import 'package:onecall/dialogs/pop.dart';
 import 'package:onecall/helperwidgets/vertical_space.dart';
@@ -21,23 +22,23 @@ class StartingScreen extends StatelessWidget {
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.max,
             children: [
-              Expanded(
-                child: Container(
-                  child: Center(
-                    child: Container(
-                      height: MediaQuery.of(context).size.height * 0.39,
-                      child: Image.asset(
-                        Assistant().fromImages(
-                          'playstore2.png',
-                        ),
-                        fit: BoxFit.contain,
+              Container(
+                child: Center(
+                  child: Container(
+                    height: MediaQuery.of(context).size.height * 0.30,
+                    child: Image.asset(
+                      Assistant().fromImages(
+                        'playstore2.png',
                       ),
+                      fit: BoxFit.contain,
                     ),
                   ),
                 ),
               ),
+ 
               Container(
                 width: MediaQuery.of(context).size.width,
                 child: Column(
@@ -46,7 +47,9 @@ class StartingScreen extends StatelessWidget {
                     Material(
                         color: Colors.transparent,
                         child: InkWell(
-                            onTap: () {},
+                            onTap: () {
+                              Get.to(()=> SignupScreen(), transition: Transition.rightToLeft);
+                            },
                             child: StartingButton(
                               label: 'Start an account',
                               bgcolor: primary,
@@ -66,12 +69,8 @@ class StartingScreen extends StatelessWidget {
                               textcolor: Colors.black.withOpacity(0.75),
                             ))),
                     VerticalSpace(value: 8),
-                        OrOption(),
                     VerticalSpace(value:8),
-                    WithlogoButton(function: (){
-
-                      Pop.showLoginProgress();
-                    }),
+                  
                     VerticalSpace(value:12),
                     Text(
                       'Earnded Gawad award 2021 and the must trusted food deliver business in the philippines with high ratings in google playsotre  ',
