@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:onecall/auth/account_notice_screen.dart';
 import 'package:onecall/auth/otp_verification_screen.dart';
 import 'package:onecall/auth/signup_screen.dart';
 import 'package:onecall/bindings/auth_binding.dart';
@@ -25,8 +26,8 @@ import 'package:onecall/onboard/onboarding_screen.dart';
 
 Future<void> main() async {
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    statusBarIconBrightness: Brightness.dark,
     statusBarColor: purewhite,
-    statusBarIconBrightness: Brightness.dark
   ));
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp().then((value) { 
@@ -60,19 +61,21 @@ final bool isBoardingShowedOnce;
   @override
   Widget build(BuildContext context){
     return GetMaterialApp(
-      //theme: apptheme,
+      theme: apptheme,
       debugShowCheckedModeBanner: false,
       home:
-      SetupInformationForMobileScreen(),
-      //SetupInformationScreen(),
-      //DataPrivacyScreen(),
+    //AccountNoticeScreen(),
+     // SetupInformationForMobileScreen(),
+    //setup_information_for_google_screen(),
+    //DataPrivacyScreen(),
       //TermsAndConditionScreen(),
-     //SignupScreen(),
+    // SignupScreen(),
       //OtpVerificationScreen(),
      //SigninScreen(),
       //StartingScreen(),
-     // OnboardingScreen(), 
-      //isBoardingShowedOnce ? SigninScreen() :  OnboardingScreen(),
+     //OnboardingScreen(), 
+      //isBoardingShowedOnce ? SigninScreen() :  OnboardingScreen()
+    HomeScreen(),
       getPages: [
         GetPage(name: StartingScreen.screenName,  page: ()=> StartingScreen(),),
         GetPage(name: DataPrivacyScreen.screenName,  page: ()=> DataPrivacyScreen(),),
@@ -80,8 +83,9 @@ final bool isBoardingShowedOnce;
         GetPage(name: SigninScreen.screenName,  page: ()=> const SigninScreen(), binding: AuthBinding()),
         GetPage(name: SignupScreen.screenName,  page: ()=> const SignupScreen(), binding: AuthBinding()),
         GetPage(name: OtpVerificationScreen.screenName,  page: ()=> const OtpVerificationScreen(),),
-        GetPage(name: SetupInformationScreen.screenName,  page: ()=> const SetupInformationScreen(),),
+        GetPage(name: setup_information_for_google_screen.screenName,  page: ()=> const setup_information_for_google_screen(),),
         GetPage(name: SetupInformationForMobileScreen.screenName,  page: ()=>  const SetupInformationForMobileScreen(),),
+        GetPage(name: AccountNoticeScreen.screenName , page: ()=> const AccountNoticeScreen(), ),
         GetPage(name: HomeScreen.screenName , page: ()=> const HomeScreen(), binding: AuthBinding()),
       ],
     );

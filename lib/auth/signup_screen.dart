@@ -117,12 +117,12 @@ class _SignupScreenState extends State<SignupScreen> {
                             color: black_75, fontWeight: FontWeight.w700),
                       ),
                       VerticalSpace(value: 12),
-                      CustomeTextField(controller: email, icon: Icons.alternate_email , function: clearTextField, label: 'Email', textinputaction: TextInputAction.next ,obscure: false, inputype: TextInputType.emailAddress, passwordtype: false),
+                      CustomeTextField(controller: email, icon: Icons.phone_android_rounded , function: clearTextField, label: 'Phone number', textinputaction: TextInputAction.next ,obscure: false, inputype: TextInputType.emailAddress, passwordtype: false),
 
                       VerticalSpace(value: 12),
                       CustomeTextField(controller: fullname, icon: Icons.person_outline , function: clearTextField, label: 'Full name', textinputaction: TextInputAction.next ,obscure: false, inputype: TextInputType.emailAddress, passwordtype: false),
                       VerticalSpace(value: 12),
-                      CustomeTextField(controller: password, icon: Icons.lock_outline_rounded, function: clearTextField, label: 'Password', textinputaction: TextInputAction.next ,obscure: isShowPassword, inputype: TextInputType.text, passwordtype:true , passwordtoggle: showPasswordToggle,),
+                      //CustomeTextField(controller: password, icon: Icons.lock_outline_rounded, function: clearTextField, label: 'Password', textinputaction: TextInputAction.next ,obscure: isShowPassword, inputype: TextInputType.text, passwordtype:true , passwordtoggle: showPasswordToggle,),
                       
                       VerticalSpace(value: 16),
                       RichText(

@@ -22,7 +22,7 @@ static String screenName = "/dataprivacy";
         
       ),
       body: Container(
-        padding:EdgeInsets.only(right: screenPadding, left: screenPadding, bottom: screenPadding),
+        padding:EdgeInsets.only(right: screenPadding, left: screenPadding, bottom: MediaQuery.of(context).size.height * 0.15,),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.max,
@@ -51,13 +51,19 @@ static String screenName = "/dataprivacy";
               ),
               ),
           ),
-          VerticalSpace(value: 12),
-          InkWell(
+
+          
+        ],),
+      ),
+  floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: Padding(
+      padding: EdgeInsets.symmetric(vertical: 24, horizontal:24,),
+        child: InkWell(
             onTap: (){
                Get.back();
             },
-            child: StartingButton(label: 'Continue', textcolor: purewhite, )),
-        ],),
+            child: StartingButton(label: 'Continue', textcolor: purewhite, )
+            ),
       ),
     );
   }

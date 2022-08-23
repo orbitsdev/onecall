@@ -9,7 +9,9 @@ import 'package:pinput/pinput.dart';
 
 ThemeData apptheme = ThemeData(
   appBarTheme: AppBarTheme(
-    systemOverlayStyle: SystemUiOverlayStyle.light
+    systemOverlayStyle: SystemUiOverlayStyle.dark,
+    
+    
     
   )
   

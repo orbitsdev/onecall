@@ -8,15 +8,15 @@ import 'package:onecall/widgets/custome_text_field.dart';
 import 'package:onecall/widgets/starting_button.dart';
 import 'package:onecall/widgets/steps_text.dart';
 
-class SetupInformationScreen extends StatefulWidget {
-const SetupInformationScreen({ Key? key }) : super(key: key);
+class setup_information_for_google_screen extends StatefulWidget {
+const setup_information_for_google_screen({ Key? key }) : super(key: key);
 static String screenName = "/setupinformationoogle";
 
   @override
-  State<SetupInformationScreen> createState() => _SetupInformationScreenState();
+  State<setup_information_for_google_screen> createState() => _SetupInformationScreenState();
 }
 
-class _SetupInformationScreenState extends State<SetupInformationScreen> {
+class _SetupInformationScreenState extends State<setup_information_for_google_screen> {
   late TextEditingController phonenumber;
   @override
   void initState() {
@@ -116,11 +116,15 @@ class _SetupInformationScreenState extends State<SetupInformationScreen> {
               VerticalSpace(value: 8),
             StepsText(stepnumber: '1.', text: 'Change profile picture(optional)' ),            
             StepsText(stepnumber: '2.', text: 'Enter your number we will send otp code for verification' ),              
-              VerticalSpace(value: 34),
-              StartingButton(label: 'Let\'s Go', textcolor: purewhite,)
-              
+            
+              VerticalSpace(value: MediaQuery.of(context).size.height * 0.20),
              ], 
             ),
+          ),
+           floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+          floatingActionButton: Container(
+            padding: EdgeInsets.all(20),
+            child:   StartingButton(label: 'Let\'s Go', textcolor: purewhite,),
           ),
         ),
       ),

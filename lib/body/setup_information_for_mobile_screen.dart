@@ -69,11 +69,16 @@ static String screenName = "/setupformobile";
                   
                   ),
                          
-             VerticalSpace(value: mediaquery.height * 0.06),
-              StartingButton(label: 'Let\'s Go', textcolor: purewhite,)
+           VerticalSpace(value: MediaQuery.of(context).size.height * 0.20),
+
               
              ], 
             ),
+          ),
+          floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+          floatingActionButton: Container(
+            padding: EdgeInsets.all(20),
+            child:   StartingButton(label: 'Let\'s Go', textcolor: purewhite,),
           ),
         ),
       ),

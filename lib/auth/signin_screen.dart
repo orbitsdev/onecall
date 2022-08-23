@@ -24,7 +24,7 @@ class SigninScreen extends StatefulWidget {
 
 class _SigninScreenState extends State<SigninScreen> {
   static String screenName = "/signin";
-  TextEditingController email = TextEditingController();
+  TextEditingController phone = TextEditingController();
   TextEditingController password = TextEditingController();
 
   bool isShowPassword = false;
@@ -48,7 +48,7 @@ class _SigninScreenState extends State<SigninScreen> {
   @override
   void initState() {
     super.initState();
-    email.addListener(listen);
+    phone.addListener(listen);
     password.addListener(listen);
   }
 
@@ -58,7 +58,7 @@ class _SigninScreenState extends State<SigninScreen> {
 
   @override
   void dispose() {
-    email.dispose();
+    phone.dispose();
     password.dispose();
     super.dispose();
   }
@@ -112,19 +112,19 @@ class _SigninScreenState extends State<SigninScreen> {
                             color: black_75, fontWeight: FontWeight.w700),
                       ),
                       VerticalSpace(value: 12),
-                      CustomeTextField(controller: email, icon: Icons.alternate_email , function: clearTextField, label: 'Email', textinputaction: TextInputAction.next ,obscure: false, inputype: TextInputType.emailAddress, passwordtype: false),
+                      CustomeTextField(controller: phone, icon: Icons.phone_android_rounded, function: clearTextField, label: 'Phone number', textinputaction: TextInputAction.next ,obscure: false, inputype: TextInputType.phone, passwordtype: false),
                      
                       VerticalSpace(value: 12),
-                      CustomeTextField(controller: password, icon: Icons.lock_outline_rounded, function: clearTextField, label: 'Password', textinputaction: TextInputAction.next ,obscure: isShowPassword, inputype: TextInputType.text, passwordtype:true , passwordtoggle: showPasswordToggle,),
+                      // CustomeTextField(controller: password, icon: Icons.lock_outline_rounded, function: clearTextField, label: 'Password', textinputaction: TextInputAction.next ,obscure: isShowPassword, inputype: TextInputType.text, passwordtype:true , passwordtoggle: showPasswordToggle,),
                       
-                      VerticalSpace(value: 16),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Text('Forgot Password?',
-                              style: bodytext_h2.copyWith(color: primary)),
-                        ],
-                      ),
+                      // VerticalSpace(value: 16),
+                      // Row(
+                      //   mainAxisAlignment: MainAxisAlignment.end,
+                      //   children: [
+                      //     Text('Forgot Password?',
+                      //         style: bodytext_h2.copyWith(color: primary)),
+                      //   ],
+                      // ),
                       VerticalSpace(value: 18),
                       Material(
                           child: InkWell(
@@ -134,7 +134,7 @@ class _SigninScreenState extends State<SigninScreen> {
                                 textcolor: purewhite,
                               ))),
                       Container(height: 50, child: OrOption()),
-                      WithlogoButton(function: () {}, hasborder: false, label: 'Login with google',),
+                      WithlogoButton(function: () {}, hasborder: false, label: 'Continue with google',),
                        Container(
                         height: 60,
                         color: Colors.red.withOpacity(0.02),
