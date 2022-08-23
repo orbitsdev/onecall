@@ -3,8 +3,11 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:onecall/auth/otp_verification_screen.dart';
 import 'package:onecall/auth/signup_screen.dart';
 import 'package:onecall/bindings/auth_binding.dart';
+import 'package:onecall/body/setup_information_for_google_screen.dart';
+import 'package:onecall/body/setup_information_for_mobile_screen.dart';
 import 'package:onecall/constant/ui.dart';
 import 'package:onecall/controllers/assistant_controller.dart';
 import 'package:onecall/data_privacy_screen.dart';
@@ -57,13 +60,16 @@ final bool isBoardingShowedOnce;
   @override
   Widget build(BuildContext context){
     return GetMaterialApp(
-      theme: apptheme,
+      //theme: apptheme,
       debugShowCheckedModeBanner: false,
       home:
+      SetupInformationForMobileScreen(),
+      //SetupInformationScreen(),
       //DataPrivacyScreen(),
       //TermsAndConditionScreen(),
-     // SignupScreen(),
-     SigninScreen(),
+     //SignupScreen(),
+      //OtpVerificationScreen(),
+     //SigninScreen(),
       //StartingScreen(),
      // OnboardingScreen(), 
       //isBoardingShowedOnce ? SigninScreen() :  OnboardingScreen(),
@@ -73,6 +79,9 @@ final bool isBoardingShowedOnce;
         GetPage(name: TermsAndConditionScreen.screenName,  page: ()=> TermsAndConditionScreen(),),
         GetPage(name: SigninScreen.screenName,  page: ()=> const SigninScreen(), binding: AuthBinding()),
         GetPage(name: SignupScreen.screenName,  page: ()=> const SignupScreen(), binding: AuthBinding()),
+        GetPage(name: OtpVerificationScreen.screenName,  page: ()=> const OtpVerificationScreen(),),
+        GetPage(name: SetupInformationScreen.screenName,  page: ()=> const SetupInformationScreen(),),
+        GetPage(name: SetupInformationForMobileScreen.screenName,  page: ()=>  const SetupInformationForMobileScreen(),),
         GetPage(name: HomeScreen.screenName , page: ()=> const HomeScreen(), binding: AuthBinding()),
       ],
     );

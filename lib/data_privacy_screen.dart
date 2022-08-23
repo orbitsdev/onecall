@@ -1,17 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:onecall/constant/controllers.dart';
 import 'package:onecall/constant/ui.dart';
-import 'package:onecall/controllers/assistant_controller.dart';
 import 'package:onecall/helperwidgets/vertical_space.dart';
 import 'package:onecall/widgets/primary_rounded_button.dart';
 import 'package:onecall/widgets/starting_button.dart';
 
 class DataPrivacyScreen extends StatelessWidget {
-  
 const DataPrivacyScreen({ Key? key }) : super(key: key);
-
-
 static String screenName = "/dataprivacy";
   @override
   Widget build(BuildContext context){
@@ -21,9 +16,9 @@ static String screenName = "/dataprivacy";
         backgroundColor: Colors.transparent,
         elevation: 0,
 
-        leading:  IconButton(onPressed: (){
+        leading:  IconButton(onPressed: (){ 
           Get.back();
-         }, icon: Icon(Icons.arrow_back, color: primary,) )
+        }, icon: Icon(Icons.arrow_back, color: primary,) )
         
       ),
       body: Container(
@@ -49,7 +44,7 @@ static String screenName = "/dataprivacy";
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
-                      Text('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum' * 3, style: bodytext_h3.copyWith(color: black_50, height: 1.5),),
+                      Text('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum' * 3, style: bodytext_h3.copyWith(color: black_50),),
                     ],
                   ),
                 ),
@@ -59,9 +54,9 @@ static String screenName = "/dataprivacy";
           VerticalSpace(value: 12),
           InkWell(
             onTap: (){
-              Get.back();
+               Get.back();
             },
-            child: StartingButton(label: 'Agree and continue', textcolor: purewhite, )),
+            child: StartingButton(label: 'Continue', textcolor: purewhite, )),
         ],),
       ),
     );

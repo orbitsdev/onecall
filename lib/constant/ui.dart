@@ -3,6 +3,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:pinput/pinput.dart';
 
 
 ThemeData apptheme = ThemeData(
@@ -12,6 +14,25 @@ ThemeData apptheme = ThemeData(
   )
   
 );
+
+double profilesize = 130;
+  var focusedBorderColor = primary;
+    const fillColor = Color.fromRGBO(243, 246, 249, 0);
+    const borderColor = Color.fromRGBO(23, 171, 144, 0.4);
+
+    final defaultPinTheme = PinTheme(
+      width: 56,
+      height: 56,
+      textStyle: GoogleFonts.poppins(
+        fontSize: 16,
+        color: black_75,
+      ),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(19),
+        border: Border.all(color: primary),
+        
+      ),
+    );
 
 Color primary = Color(0xFFFF6B03);
 Color secondary = const Color(0xFFECEDEF);
