@@ -1,9 +1,9 @@
 
 import 'package:flutter/material.dart';
-import 'package:onecall/body/navigation_content/favorite_content.dart';
-import 'package:onecall/body/navigation_content/home_content.dart';
-import 'package:onecall/body/navigation_content/profile_content.dart';
-import 'package:onecall/body/navigation_content/reciept_content.dart';
+import 'package:onecall/body/navigation_content/favorite_content/favorite_content.dart';
+import 'package:onecall/body/navigation_content/home_content/home_content.dart';
+import 'package:onecall/body/navigation_content/profile_content/profile_content.dart';
+import 'package:onecall/body/navigation_content/reciept_content/reciept_content.dart';
 
 
 ///for home main screen use

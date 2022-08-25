@@ -40,7 +40,14 @@ Color primary = Color(0xFFFF6B03);
 Color secondary = const Color(0xFFECEDEF);
 Color background = const Color(0xFFFF6B03);
 Color purewhite = const Color(0xFFFFFFFF);
+/// analogus
+Color a_orannge_dark = const Color(0xFFCF5500);
+Color a_orannge = const Color(0xFFFF6B03);
+Color a_yellow = const Color(0xFFFFE903);
+Color a_red = const Color(0xFFFF0319);
+/// 
 
+///
 
 double defaultradius= 12;
 BorderRadiusGeometry primaryradius= BorderRadius.all(Radius.circular(12));
@@ -58,7 +65,7 @@ Color black_25 =  Colors.black.withOpacity(0.25);
 Color black_12 =  Colors.black.withOpacity(0.12);
 Color black_4 =  Colors.black.withOpacity(0.04);
 
-double screenPadding = 24;
+double screenPadding = 20;
 EdgeInsetsGeometry screen_default_padding = EdgeInsets.all(24);
 EdgeInsetsGeometry container_default_padding = EdgeInsets.all(24);
 

@@ -4,6 +4,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:onecall/models/board.dart';
+import 'package:onecall/models/product.dart';
 import 'package:onecall/onboard/boarding_content.dart';
 
 List<Board> onboardingPage = [
@@ -13,3 +14,11 @@ List<Board> onboardingPage = [
 ]; 
 
  
+ List<Product> sampleproduct = [
+  Product(name: 'Burger Cheese ', imagepaht: 'f1.jpg'),
+  Product(name: 'Pizza Hot Bacon', imagepaht: 'f2.jpg'),
+  Product(name: 'Product One', imagepaht: 'f3.jpg'),
+  Product(name: 'Porduct Name', imagepaht: 'f5.jpg'),
+  Product(name: 'Chicker Fired wd', imagepaht: 'f6.jpg'),
+  Product(name: 'Sahofan', imagepaht: 'f7.jpg'),
+ ];

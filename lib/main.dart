@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:onecall/auth/account_notice_screen.dart';
 import 'package:onecall/auth/otp_verification_screen.dart';
 import 'package:onecall/auth/signup_screen.dart';
+import 'package:onecall/auth/testsliver.dart';
 import 'package:onecall/bindings/auth_binding.dart';
 import 'package:onecall/body/setup_information_for_google_screen.dart';
 import 'package:onecall/body/setup_information_for_mobile_screen.dart';
@@ -64,6 +65,7 @@ final bool isBoardingShowedOnce;
       theme: apptheme,
       debugShowCheckedModeBanner: false,
       home:
+     // Testsliver(),
     //AccountNoticeScreen(),
      // SetupInformationForMobileScreen(),
     //setup_information_for_google_screen(),
@@ -75,7 +77,7 @@ final bool isBoardingShowedOnce;
       //StartingScreen(),
      //OnboardingScreen(), 
       //isBoardingShowedOnce ? SigninScreen() :  OnboardingScreen()
-    HomeScreen(),
+   HomeScreen(),
       getPages: [
         GetPage(name: StartingScreen.screenName,  page: ()=> StartingScreen(),),
         GetPage(name: DataPrivacyScreen.screenName,  page: ()=> DataPrivacyScreen(),),
