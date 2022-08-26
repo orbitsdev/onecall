@@ -8,6 +8,7 @@ import 'package:onecall/auth/otp_verification_screen.dart';
 import 'package:onecall/auth/signup_screen.dart';
 import 'package:onecall/auth/testsliver.dart';
 import 'package:onecall/bindings/auth_binding.dart';
+import 'package:onecall/body/restaurant/restaurant_details_screen.dart';
 import 'package:onecall/body/setup_information_for_google_screen.dart';
 import 'package:onecall/body/setup_information_for_mobile_screen.dart';
 import 'package:onecall/constant/ui.dart';
@@ -65,6 +66,7 @@ final bool isBoardingShowedOnce;
       theme: apptheme,
       debugShowCheckedModeBanner: false,
       home:
+    RestaurantDetailsScreen(),
      // Testsliver(),
     //AccountNoticeScreen(),
      // SetupInformationForMobileScreen(),
@@ -77,7 +79,7 @@ final bool isBoardingShowedOnce;
       //StartingScreen(),
      //OnboardingScreen(), 
       //isBoardingShowedOnce ? SigninScreen() :  OnboardingScreen()
-   HomeScreen(),
+//HomeScreen(),
       getPages: [
         GetPage(name: StartingScreen.screenName,  page: ()=> StartingScreen(),),
         GetPage(name: DataPrivacyScreen.screenName,  page: ()=> DataPrivacyScreen(),),
@@ -89,6 +91,7 @@ final bool isBoardingShowedOnce;
         GetPage(name: SetupInformationForMobileScreen.screenName,  page: ()=>  const SetupInformationForMobileScreen(),),
         GetPage(name: AccountNoticeScreen.screenName , page: ()=> const AccountNoticeScreen(), ),
         GetPage(name: HomeScreen.screenName , page: ()=> const HomeScreen(), binding: AuthBinding()),
+        GetPage(name: RestaurantDetailsScreen.screenName , page: ()=> const RestaurantDetailsScreen(), binding: AuthBinding()),
       ],
     );
   }

@@ -22,3 +22,14 @@ List<Board> onboardingPage = [
   Product(name: 'Chicker Fired wd', imagepaht: 'f6.jpg'),
   Product(name: 'Sahofan', imagepaht: 'f7.jpg'),
  ];
+
+
+ List<String> restocategory = [
+  "Chicken",
+  "Drinks",
+  "Beff",
+  "Snacks",
+  "Snacks",
+  "Snacks",
+
+ ];
