@@ -73,6 +73,7 @@ Color black_50 =  Colors.black.withOpacity(0.50);
 Color black_25 =  Colors.black.withOpacity(0.25);
 Color black_12 =  Colors.black.withOpacity(0.12);
 Color black_4 =  Colors.black.withOpacity(0.04);
+Color black_05 =  Colors.black.withOpacity(0.5);
 
 double screenPadding = 20;
 EdgeInsetsGeometry screen_default_padding = EdgeInsets.all(24);

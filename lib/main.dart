@@ -8,7 +8,9 @@ import 'package:onecall/auth/otp_verification_screen.dart';
 import 'package:onecall/auth/signup_screen.dart';
 import 'package:onecall/auth/testsliver.dart';
 import 'package:onecall/bindings/auth_binding.dart';
+import 'package:onecall/body/cart_screen.dart';
 import 'package:onecall/body/restaurant/restaurant_details_screen.dart';
+import 'package:onecall/body/restaurant/resto_product_details_screen.dart';
 import 'package:onecall/body/setup_information_for_google_screen.dart';
 import 'package:onecall/body/setup_information_for_mobile_screen.dart';
 import 'package:onecall/constant/ui.dart';
@@ -66,7 +68,9 @@ final bool isBoardingShowedOnce;
       theme: apptheme,
       debugShowCheckedModeBanner: false,
       home:
-    RestaurantDetailsScreen(),
+      CartScreen(),
+      //RestoProductDetailsScreen(),
+    //RestaurantDetailsScreen(),
      // Testsliver(),
     //AccountNoticeScreen(),
      // SetupInformationForMobileScreen(),
@@ -92,6 +96,8 @@ final bool isBoardingShowedOnce;
         GetPage(name: AccountNoticeScreen.screenName , page: ()=> const AccountNoticeScreen(), ),
         GetPage(name: HomeScreen.screenName , page: ()=> const HomeScreen(), binding: AuthBinding()),
         GetPage(name: RestaurantDetailsScreen.screenName , page: ()=> const RestaurantDetailsScreen(), binding: AuthBinding()),
+        GetPage(name: RestoProductDetailsScreen.screenName , page: ()=> const RestoProductDetailsScreen(), binding: AuthBinding()),
+        GetPage(name: CartScreen.screenName , page: ()=> CartScreen() , binding: AuthBinding()),
       ],
     );
   }

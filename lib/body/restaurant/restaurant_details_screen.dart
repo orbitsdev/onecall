@@ -144,74 +144,7 @@ class _RestaurantDetailsScreenState extends State<RestaurantDetailsScreen>
                     )
                   ),
             ),
-//       SliverGrid(
-//   gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-//     maxCrossAxisExtent: 200.0,
-//     mainAxisSpacing: 10.0,
-//     crossAxisSpacing: 10.0,
-//     childAspectRatio: 4.0,
-//   ),jmun mm 
-//   delegate: SliverChildBuilderDelegate(
-//     (BuildContext context, int index) {
-//       return Container(
-//         alignment: Alignment.center,
-//         color: Colors.teal[100 * (index % 9)],
-//         child: Text('grid item $index' * 50),
-//       );
-//     },
-//     childCount: 20,
-//   ),
-// ),  
-  // SliverFillRemaining(
-  //   child: Container(
-  //     height: 300,
-  //     child: MasonryGridView.count(
-        
-  //             itemCount: 10,
-  //             padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 10),
-  //             // the number of columns
-  //             crossAxisCount: 3, 
-  //             // vertical gap between two items
-  //             mainAxisSpacing: 4, 
-  //             // horizontal gap between two items
-  //             crossAxisSpacing: 4, 
-  //             itemBuilder: (context, index) {
-  //               // display each item with a card
-  //               return Container(
-  //                 padding: EdgeInsets.all(8),
-  //                   color: Colors.red,
-  //                 child: Text('data' * 50),
-  //               );
-  //             },
-  //           ),
-  //   ),
-  // )
 
-          // SliverToBoxAdapter(
-          //   child: GridView.custom(
-          //     shrinkWrap: true,
-          //     physics: const NeverScrollableScrollPhysics(),
-          //     gridDelegate: SliverQuiltedGridDelegate(
-          //       crossAxisCount: 4,
-          //       mainAxisSpacing: 4,
-          //       crossAxisSpacing: 4,
-          //       repeatPattern: QuiltedGridRepeatPattern.inverted,
-          //       pattern: const [
-          //         QuiltedGridTile(2, 2),
-          //         QuiltedGridTile(1, 1),
-          //         QuiltedGridTile(1, 1),
-          //         QuiltedGridTile(1, 2),
-          //       ],
-          //     ),
-          //     childrenDelegate: SliverChildBuilderDelegate(
-          //       (context, index) => Container(
-          //         color: Colors.cyanAccent,
-          //         child: Text("$index"),
-          //       ),
-          //       childCount: 44,
-          //     ),
-          //   ),
-          // )
             
           ],
         ),
