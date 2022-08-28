@@ -6,13 +6,15 @@ class CircleButton extends StatelessWidget {
   final IconData icon;
   final Function function;
   final Color? bgcolor;
+  final Color? iconcolor;
   const CircleButton({
     Key? key,
     required this.icon,
     required this.function,
     this.bgcolor,
+    this.iconcolor,
   }) : super(key: key);
-
+  
   @override
   Widget build(BuildContext context) {
     return ClipOval(
@@ -22,6 +24,7 @@ class CircleButton extends StatelessWidget {
         child: Center(
           child: InkWell(
             splashColor: black_75,
+            
             onTap: () {
               function();
             },
@@ -29,7 +32,7 @@ class CircleButton extends StatelessWidget {
               padding: EdgeInsets.all(8),
               child: Icon(
                 icon,
-                color: purewhite,
+                color: iconcolor !=  null ? iconcolor : purewhite,
               ),
             ),
           ),

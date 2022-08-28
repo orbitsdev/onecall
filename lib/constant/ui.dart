@@ -1,5 +1,7 @@
 
 
+import 'dart:ui';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -18,6 +20,12 @@ ThemeData apptheme = ThemeData(
   
 );
 
+ TextStyle primarytitle = bodytext_h1.copyWith(color: black_75, fontWeight: FontWeight.w700, height: 0);
+ TextStyle secondarytitle = bodytext_h2.copyWith(color: black_75, fontWeight: FontWeight.w700, height: 1);
+ TextStyle thirdtitle = bodytext_h3.copyWith(color: black_75, fontWeight: FontWeight.w700, height: 0);
+ TextStyle bodyparagph_primary = bodytext_h2.copyWith(color: black_75,  height:  1.5);
+ TextStyle bodyparagph_secondary = bodytext_h2.copyWith(color: black_50,  height: 1.5);
+ 
 double profilesize = 130;
   var focusedBorderColor = primary;
     const fillColor = Color.fromRGBO(243, 246, 249, 0);
