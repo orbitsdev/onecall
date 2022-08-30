@@ -66,6 +66,8 @@ BorderRadius circular_radius_primary = BorderRadius.circular(12);
 Color greytext =  Colors.black.withOpacity(0.50);
 /// 
 Color greybutton =  Color(0xffECEDEF);
+Color greybg =  Color(0xffF6F6F6);
+Color green =  Color(0xff26AA99);
 /// 
 Color black_100 =  Colors.black;
 Color black_75 =  Colors.black.withOpacity(0.75);

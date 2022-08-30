@@ -68,8 +68,8 @@ final bool isBoardingShowedOnce;
       theme: apptheme,
       debugShowCheckedModeBanner: false,
       home:
-      CartScreen(),
-      //RestoProductDetailsScreen(),
+    // CartScreen(),
+     RestoProductDetailsScreen(),
     //RestaurantDetailsScreen(),
      // Testsliver(),
     //AccountNoticeScreen(),
