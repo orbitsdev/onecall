@@ -9,13 +9,13 @@ class RestoCard extends StatelessWidget {
   final String cicleimage;
   final String restaurantname;
   final String kilometerdistance;
-  final String restodetails;
+  final String address;
   final String timeopen;
   final String timeclose;
   final String openfrom;
   final String openuntil;
 
-  const RestoCard({super.key, required this.image, required this.cicleimage, required this.restaurantname,  required this.kilometerdistance, required this.restodetails, required this.timeopen, required this.timeclose, required this.openfrom, required this.openuntil});
+  const RestoCard({super.key, required this.image, required this.cicleimage, required this.restaurantname,  required this.kilometerdistance, required this.address, required this.timeopen, required this.timeclose, required this.openfrom, required this.openuntil});
 
 
   @override
@@ -116,7 +116,7 @@ class RestoCard extends StatelessWidget {
                               HorizontalSpace(value: 8),
                               Expanded(
                                 child: Text(
-                                    restodetails,
+                                    address,
                                   style: bodytext_h3.copyWith(color: black_25),
                                 ),
                               ),

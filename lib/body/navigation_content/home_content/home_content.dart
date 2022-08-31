@@ -13,6 +13,7 @@ import 'package:onecall/body/restaurant/resto_card.dart';
 import 'package:onecall/constant/ui.dart';
 import 'package:onecall/helperwidgets/horizontal_space.dart';
 import 'package:onecall/helperwidgets/vertical_space.dart';
+import 'package:onecall/models/products.dart';
 import 'package:onecall/sample/sampledata.dart';
 import 'package:onecall/widgets/circle_button.dart';
 import 'package:onecall/widgets/sample_list.dart';
@@ -52,20 +53,7 @@ class HomeContent extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    // Container(
-                    //   height: 30,
-                    //   width: 30,
-                    //   decoration: BoxDecoration(
-                    //       borderRadius: BorderRadius.circular(30 * 2),
-                    //       color: Colors.red),
-                    //   child: ClipOval(
-                    //       child: Image.asset(
-                    //     Assistant().fromImages(
-                    //       'Rectangle 4.png',
-                    //     ),
-                    //     fit: BoxFit.cover,
-                    //   )),
-                    // ),
+                  
                     CircleButton(
                         iconcolor: primary,
                         icon: Icons.notifications_outlined,
@@ -81,128 +69,116 @@ class HomeContent extends StatelessWidget {
           ),
         ),
 
-        SliverToBoxAdapter(
-          child: Container(
-            padding: EdgeInsets.symmetric(
-              horizontal: screenPadding,
-            ),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                VerticalSpace(value: 8),
-                DeliveryAddress(),
-                VerticalSpace(value: 16),
-                GestureDetector(
-                  onTap: () => {
-                    Get.to(() => RestaurantDetailsScreen()),
-                  },
-                  child: Hero(
-                    tag: 'f1',
-                    child: Image.asset(
-                      Assistant().fromImages('f1.jpg'),
-                      width: 40,
-                      height: 40,
-                    ),
-                  ),
-                ),
-                Container(
-                  child: Column(
-                    children: [
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Category ',
-                            style: bodytext_h1.copyWith(
-                                color: black_75, fontWeight: FontWeight.bold),
-                          ),
-                          Text(
-                            'See all ',
-                            style: bodytext_h2.copyWith(color: primary),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                )
-              ],
-            ),
-          ),
-        ),
-        SliverToBoxAdapter(
-          child: Container(
-            //        color: primary.withOpacity(0.1),
-            padding: EdgeInsets.symmetric(
-              vertical: 12,
-              horizontal: 24,
-            ),
-            height: 140,
-            child: Scrollbar(
-              radius: Radius.circular(12),
-              child: AnimationLimiter(
-                child: ListView.builder(
-                  shrinkWrap: true,
-                  scrollDirection: Axis.horizontal,
-                  itemCount: sampleproduct.length,
-                  itemBuilder: (context, index) =>
-                      AnimationConfiguration.staggeredList(
-                    position: index,
-                    duration: Duration(milliseconds: 700),
-                    child: ScaleAnimation(
-                      child: Container(
-                        padding: EdgeInsets.only(top: 8, left: 8, right: 0),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(4),
-                            color: purewhite,
-                            boxShadow: [
-                              // BoxShadow(
-                              //   color: Colors.black.withOpacity(0.2),
-                              //   spreadRadius: 1,
-                              //   blurRadius: 6,
-                              //   offset: const Offset(0, 2),
-                              // ),
-                            ]),
-                        child: Stack(
-                          children: [
-                            Positioned(
-                              bottom: 0,
-                              right: 0,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image: AssetImage(
-                                        Assistant().fromImages(
-                                            sampleproduct[index].imagepaht),
-                                      ),
-                                      fit: BoxFit.fill),
-                                  borderRadius: BorderRadius.circular(4),
-                                  //color: primary,
-                                ),
-                                height: 80,
-                                width: 110,
-                              ),
-                            ),
-                            Text(
-                              sampleproduct[index].name,
-                              style: bodytext_h2.copyWith(
-                                  color: black_75, fontWeight: FontWeight.w600),
-                            ),
-                          ],
-                        ),
-                        width: MediaQuery.of(context).size.width / 2,
-                        margin: EdgeInsets.only(
-                            right: 12, bottom: 8, top: 6, left: 8),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ),
+        // SliverToBoxAdapter(
+        //   child: Container(
+        //     padding: EdgeInsets.symmetric(
+        //       horizontal: screenPadding,
+        //     ),
+        //     child: Column(
+        //       mainAxisSize: MainAxisSize.max,
+        //       mainAxisAlignment: MainAxisAlignment.center,
+        //       crossAxisAlignment: CrossAxisAlignment.start,
+        //       children: [
+        //         VerticalSpace(value: 8),
+        //         DeliveryAddress(),
+        //         VerticalSpace(value: 16),
+               
+        //         Container(
+        //           child: Column(
+        //             children: [
+        //               Row(
+        //                 crossAxisAlignment: CrossAxisAlignment.center,
+        //                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        //                 children: [
+        //                   Text(
+        //                     'Category ',
+        //                     style: bodytext_h1.copyWith(
+        //                         color: black_75, fontWeight: FontWeight.bold),
+        //                   ),
+        //                   Text(
+        //                     'See all ',
+        //                     style: bodytext_h2.copyWith(color: primary),
+        //                   ),
+        //                 ],
+        //               ),
+        //             ],
+        //           ),
+        //         )
+        //       ],
+        //     ),
+        //   ),
+        // ),
+        // SliverToBoxAdapter(
+        //   child: Container(
+        //     //        color: primary.withOpacity(0.1),
+        //     padding: EdgeInsets.symmetric(
+        //       vertical: 12,
+        //       horizontal: 24,
+        //     ),
+        //     height: 140,
+        //     child: Scrollbar(
+        //       radius: Radius.circular(12),
+        //       child: AnimationLimiter(
+        //         child: ListView.builder(
+        //           shrinkWrap: true,
+        //           scrollDirection: Axis.horizontal,
+        //           itemCount: joilebeeproductsample.length,
+        //           itemBuilder: (context, index) =>
+        //               AnimationConfiguration.staggeredList(
+        //             position: index,
+        //             duration: Duration(milliseconds: 700),
+        //             child: ScaleAnimation(
+        //               child: Container(
+        //                 padding: EdgeInsets.only(top: 8, left: 8, right: 0),
+        //                 decoration: BoxDecoration(
+        //                     borderRadius: BorderRadius.circular(4),
+        //                     color: purewhite,
+        //                     boxShadow: [
+        //                       // BoxShadow(
+        //                       //   color: Colors.black.withOpacity(0.2),
+        //                       //   spreadRadius: 1,
+        //                       //   blurRadius: 6,
+        //                       //   offset: const Offset(0, 2),
+        //                       // ),
+        //                     ]),
+        //                 child: Stack(
+        //                   children: [
+        //                     Positioned(
+        //                       bottom: 0,
+        //                       right: 0,
+        //                       child: Container(
+        //                         decoration: BoxDecoration(
+        //                           image: DecorationImage(
+        //                               image: AssetImage(
+        //                                 Assistant().fromImages(
+        //                                     joilebeeproductsample[index].image),
+        //                               ),
+        //                               fit: BoxFit.fill),
+        //                           borderRadius: BorderRadius.circular(4),
+        //                           //color: primary,
+        //                         ),
+        //                         height: 80,
+        //                         width: 110,
+        //                       ),
+        //                     ),
+        //                     Text(
+        //                       joilebeeproductsample[index].name,
+        //                       style: bodytext_h2.copyWith(
+        //                           color: black_75, fontWeight: FontWeight.w600),
+        //                     ),
+        //                   ],
+        //                 ),
+        //                 width: MediaQuery.of(context).size.width / 2,
+        //                 margin: EdgeInsets.only(
+        //                     right: 12, bottom: 8, top: 6, left: 8),
+        //               ),
+        //             ),
+        //           ),
+        //         ),
+        //       ),
+        //     ),
+        //   ),
+        // ),
         SverticalSpace(height: 4),
         SliverToBoxAdapter(
           child: Container(
@@ -217,7 +193,7 @@ class HomeContent extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'Near Food ',
+                          'Near Merchants ',
                           style: bodytext_h1.copyWith(
                               color: black_75, fontWeight: FontWeight.bold),
                         ),
@@ -234,19 +210,24 @@ class HomeContent extends StatelessWidget {
 
         SliverList(
           delegate: SliverChildBuilderDelegate(
-            childCount: 10,
+            childCount: samplerestaurant.length,
             (context, index) =>
-              RestoCard(
-                image: 'f1.jpg',
-                cicleimage: 'playstore.png', 
-                restaurantname: 'Jolibee Isulan Sultan Kudarat', 
-                kilometerdistance: '0.25 Km',
-                restodetails: 'Jolibee is one the most popular fast food in the Philippines. Kid realy enjoy eating jolibbe', 
-                timeopen: '6:00 AM', 
-                timeclose:'8:30 PM',
-                 openfrom: "M", 
-                 openuntil: 'S'
-                 ),
+              GestureDetector(
+                onTap: (){
+                  Get.to(()=> RestaurantDetailsScreen(restaurant: samplerestaurant[index],));
+                },
+                child: RestoCard(
+                  image:samplerestaurant[index].image,
+                  cicleimage:samplerestaurant[index].circleimage, 
+                  restaurantname:samplerestaurant[index].name, 
+                  kilometerdistance:samplerestaurant[index].kilometerDistance,
+                  address:samplerestaurant[index].address, 
+                  timeopen:samplerestaurant[index].openAt, 
+                  timeclose:samplerestaurant[index].closeAt,
+                   openfrom:samplerestaurant[index].from, 
+                   openuntil:samplerestaurant[index].until
+                   ),
+              ),
             
             //  Container(
             //   child: Column(

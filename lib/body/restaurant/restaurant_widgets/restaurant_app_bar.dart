@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
 import 'package:onecall/assistant/assistant.dart';
 import 'package:onecall/constant/ui.dart';
 import 'package:onecall/helperwidgets/horizontal_space.dart';
@@ -7,7 +9,18 @@ import 'package:onecall/widgets/circle_button.dart';
 import 'package:onecall/widgets/notification_icon.dart';
 
 class RestaurantAppBar extends StatelessWidget {
-const RestaurantAppBar({ Key? key }) : super(key: key);
+
+  final String name;
+  final String restaurantId;
+  final String image;
+  final String address;
+  const RestaurantAppBar({
+    Key? key,
+    required this.name,
+    required this.image,
+    required this.address,
+    required this.restaurantId
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context){
@@ -23,7 +36,7 @@ const RestaurantAppBar({ Key? key }) : super(key: key);
                 children: [
                   CircleButton( bgcolor: Colors.black.withOpacity(0.5),
                     icon: Icons.arrow_back_ios_rounded, function:  (){
-                    
+                    Get.back();
                   },),
                   Row(
                     children: [
@@ -47,9 +60,9 @@ const RestaurantAppBar({ Key? key }) : super(key: key);
                 alignment: Alignment.center,
                 children: [
                    Hero(
-                tag: 'f1',
+                tag: restaurantId,
                 child: Image.asset(
-                  Assistant().fromImages('f1.jpg'),
+                  Assistant().fromImages(image),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -99,7 +112,7 @@ const RestaurantAppBar({ Key? key }) : super(key: key);
                       child: Text(' Business Merchants',  style : bodytext_h5.copyWith(color: primary,),),
                     ),
                     VerticalSpace(value: 8),
-                    Text('Jolibbes Isulan Sultan Kudarat', style: bodytext_h2.copyWith(color: black_75, fontWeight: FontWeight.w700),),
+                    Text(name, style: bodytext_h2.copyWith(color: black_75, fontWeight: FontWeight.w700),),
                     VerticalSpace(value:2),
                     Container(
                       child: Row(
@@ -108,7 +121,7 @@ const RestaurantAppBar({ Key? key }) : super(key: key);
                           // Container(
                           //   height: 34,
                           //   child: Center(child: Icon(Icons.location_on,color: a_orannge,))),
-                          Expanded(child: Text('299 st kalawa rpunde ball Isulan' , style: bodytext_h3.copyWith(color: black_75, height: 0), textAlign: TextAlign.center, )),
+                          Expanded(child: Text(address, style: bodytext_h3.copyWith(color: black_75, height: 0), textAlign: TextAlign.center, )),
                         ],
                       ),
                     ),

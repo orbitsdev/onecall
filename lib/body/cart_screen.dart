@@ -4,7 +4,10 @@ import 'package:onecall/assistant/assistant.dart';
 import 'package:onecall/constant/ui.dart';
 import 'package:onecall/helperwidgets/horizontal_space.dart';
 import 'package:onecall/helperwidgets/vertical_space.dart';
+import 'package:onecall/sample/sampledata.dart';
 import 'package:onecall/widgets/circle_button.dart';
+import 'package:onecall/widgets/extran_content.dart';
+import 'package:onecall/widgets/line.dart';
 
 class CartScreen extends StatelessWidget {
   static String screenName = "/cart";
@@ -42,8 +45,14 @@ class CartScreen extends StatelessWidget {
                   childCount: 10,
                   (contex, index) => Container(
                         //color: Colors.red,
-                        margin:
-                            EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+                        decoration: BoxDecoration(
+                          border: Border(
+                            top: borderblack,
+                          ),
+                        ),
+                        padding: EdgeInsets.only(top: 6, bottom: 8),
+                        // margin:
+                        //     EdgeInsets.symmetric(vertical: 8, horizontal: 12),
                         child: Row(
                           children: [
                             Expanded(
@@ -56,7 +65,7 @@ class CartScreen extends StatelessWidget {
                                         shape: RoundedRectangleBorder(
                                             borderRadius:
                                                 BorderRadius.circular(4)),
-                                        activeColor:primary,
+                                        activeColor: primary,
                                         value: true,
                                         onChanged: (value) {}),
                                   ),
@@ -93,22 +102,67 @@ class CartScreen extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      'Product Name',
+                                      'Black Pepper ',
                                       style: bodytext_h3.copyWith(
-                                          color: black_75,
-                                          fontWeight: FontWeight.w700),
+                                        color: black_75,
+                                        //fontWeight: FontWeight.w500
+                                      ),
                                     ),
-                                    VerticalSpace(value: 10),
+
+                                    if(sample_extra_list.length > 0)
+                                     ExtranContent(extra: sample_extra_list),
+
+                                      // Container(
+                                    //   child: Column(
+                                    //     crossAxisAlignment:
+                                    //         CrossAxisAlignment.start,
+                                    //     children: [
+                                    //       // Line(
+                                    //       //   color: greybutton,
+                                    //       // ),
+                                    //       VerticalSpace(value: 6),
+                                    //       RichText(
+                                    //         text: TextSpan(
+                                    //             text: 'Add On \n',
+                                    //             style: bodytext_h4.copyWith(
+                                    //               color: black_50,
+                                    //             ),
+                                    //             children: [
+                                    //               TextSpan(
+                                    //                   text: 'Egg, Chees, Bacon',
+                                    //                   style:
+                                    //                       bodytext_h4.copyWith(
+                                    //                           color: black_25,
+                                    //                           fontStyle:
+                                    //                               FontStyle
+                                    //                                   .italic)),
+                                    //             ]),
+                                    //       ),
+                                    //     ],
+                                    //   ),
+                                    // ),
+                                    
+                                    
+                                    
+                                
                                     RichText(
                                       text: TextSpan(
-                                          style: bodytext_h1.copyWith(
-                                              color: primary),
-                                          text: '₱ 800 ',
-                                          children: [
-                                            //   TextSpan(text: '₱ 400', style: bodytext_h3.copyWith(color: black_25, decoration: TextDecoration.lineThrough))
-                                          ]),
+                                        style: bodytext_h3.copyWith(
+                                            color: primary),
+                                        text: '₱ 800',
+                                        //   children: [
+                                        //  //   TextSpan(text: ' '),
+                                        //     TextSpan(
+                                        //   style: bodytext_h2.copyWith(
+                                        //       color: black_75),
+                                        //   text: '₱ 800 ',),
+                                        //     //   TextSpan(text: '₱ 400', style: bodytext_h3.copyWith(color: black_25, decoration: TextDecoration.lineThrough))
+                                        //   ]
+                                      ),
                                     ),
-                                    VerticalSpace(value: 8),
+                                    Line(
+                                      color: greybutton,
+                                    ),
                                     Row(
                                       children: [
                                         Container(
@@ -177,27 +231,23 @@ class CartScreen extends StatelessWidget {
               Expanded(
                 flex: 2,
                 child: Container(
-
                   child: Row(
-                     crossAxisAlignment: CrossAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Expanded(
                         child: Container(
                           child: Row(
-
-                           
                             children: [
                               Transform.scale(
-                                    scale: 1.4,
-                                    child: Checkbox(
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(4)),
-                                        activeColor: Colors.green[600],
-                                        value: true,
-                                        onChanged: (value) {}),
-                                  ),
+                                scale: 1.4,
+                                child: Checkbox(
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(4)),
+                                    activeColor: Colors.green[600],
+                                    value: true,
+                                    onChanged: (value) {}),
+                              ),
                               Text(
                                 'All',
                                 style: bodytext_h2,
@@ -208,7 +258,8 @@ class CartScreen extends StatelessWidget {
                       ),
                       Expanded(
                         child: Container(
-                                            padding: EdgeInsets.all(4),
+                          padding:
+                              EdgeInsets.symmetric(vertical: 6, horizontal: 4),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
@@ -219,7 +270,9 @@ class CartScreen extends StatelessWidget {
                               Flexible(
                                   child: Text(
                                 '₱ 20000',
-                                style: bodytext_h3.copyWith(color: primary, fontWeight: FontWeight.w700),
+                                style: bodytext_h2.copyWith(
+                                    color: Colors.red,
+                                    fontWeight: FontWeight.w700),
                               )),
                             ],
                           ),

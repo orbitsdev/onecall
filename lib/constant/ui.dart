@@ -58,6 +58,12 @@ Color a_red = const Color(0xFFFF0319);
 
 ///
 
+BorderSide borderblack = BorderSide(
+                              color: greybutton,
+                              width: 1
+                            );
+                          
+
 double defaultradius= 12;
 BorderRadiusGeometry primaryradius= BorderRadius.all(Radius.circular(12));
 BorderRadius circular_radius_primary = BorderRadius.circular(12);

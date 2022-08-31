@@ -10,11 +10,12 @@ import 'package:onecall/auth/testsliver.dart';
 import 'package:onecall/bindings/auth_binding.dart';
 import 'package:onecall/body/cart_screen.dart';
 import 'package:onecall/body/restaurant/restaurant_details_screen.dart';
-import 'package:onecall/body/restaurant/resto_product_details_screen.dart';
+import 'package:onecall/body/restaurant/product/resto_product_details_screen.dart';
 import 'package:onecall/body/setup_information_for_google_screen.dart';
 import 'package:onecall/body/setup_information_for_mobile_screen.dart';
 import 'package:onecall/constant/ui.dart';
 import 'package:onecall/controllers/assistant_controller.dart';
+import 'package:onecall/controllers/restaurant_controller.dart';
 import 'package:onecall/data_privacy_screen.dart';
 import 'package:onecall/starting_screen.dart';
 import 'package:onecall/terms_and_condition_screen.dart';
@@ -38,6 +39,7 @@ Future<void> main() async {
 
     Get.put(AuthController(), permanent: true);
     Get.put(AssistantController(), permanent: true);
+    Get.put(RestaurantController(), permanent: true);
 
 
   });
@@ -69,8 +71,8 @@ final bool isBoardingShowedOnce;
       debugShowCheckedModeBanner: false,
       home:
     // CartScreen(),
-     RestoProductDetailsScreen(),
-    //RestaurantDetailsScreen(),
+  ///RestoProductDetailsScreen(),
+   //RestaurantDetailsScreen(),
      // Testsliver(),
     //AccountNoticeScreen(),
      // SetupInformationForMobileScreen(),
@@ -83,7 +85,7 @@ final bool isBoardingShowedOnce;
       //StartingScreen(),
      //OnboardingScreen(), 
       //isBoardingShowedOnce ? SigninScreen() :  OnboardingScreen()
-//HomeScreen(),
+      HomeScreen(),
       getPages: [
         GetPage(name: StartingScreen.screenName,  page: ()=> StartingScreen(),),
         GetPage(name: DataPrivacyScreen.screenName,  page: ()=> DataPrivacyScreen(),),
