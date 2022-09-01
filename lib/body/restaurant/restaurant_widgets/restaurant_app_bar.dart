@@ -5,6 +5,7 @@ import 'package:onecall/assistant/assistant.dart';
 import 'package:onecall/constant/ui.dart';
 import 'package:onecall/helperwidgets/horizontal_space.dart';
 import 'package:onecall/helperwidgets/vertical_space.dart';
+import 'package:onecall/models/restaurant.dart';
 import 'package:onecall/widgets/circle_button.dart';
 import 'package:onecall/widgets/notification_icon.dart';
 
@@ -14,12 +15,19 @@ class RestaurantAppBar extends StatelessWidget {
   final String restaurantId;
   final String image;
   final String address;
+  final TabController tabcontroller;
+  final Function tabarfunction;
+  final List<CategoriesWithProduct> categoriesandproducts;
+
   const RestaurantAppBar({
     Key? key,
     required this.name,
+    required this.restaurantId,
     required this.image,
     required this.address,
-    required this.restaurantId
+    required this.tabcontroller,
+    required this.tabarfunction,
+    required this.categoriesandproducts,
   }) : super(key: key);
 
   @override
@@ -29,7 +37,7 @@ class RestaurantAppBar extends StatelessWidget {
             automaticallyImplyLeading: false,
               leading: null,
             floating: true,
-            expandedHeight: MediaQuery.of(context).size.height * 0.35,
+            expandedHeight: MediaQuery.of(context).size.height * 0.38,
             title: Container(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -54,7 +62,7 @@ class RestaurantAppBar extends StatelessWidget {
                 StretchMode.blurBackground
               ],
               background:Stack(
-              
+
             clipBehavior: Clip.none,
               fit: StackFit.expand,
                 alignment: Alignment.center,
@@ -79,61 +87,54 @@ class RestaurantAppBar extends StatelessWidget {
                       colors: [
                           Colors.black.withOpacity(0.3),
                           Colors.transparent
-              
+
                       ])
                   ),
                 ),
               ),
 
               Positioned(
-                right: 16,
-                left: 16,
-                bottom: - MediaQuery.of(context).size.height * 0.30 /4  ,
+                right: 0,
+                left: 0,
+                bottom: - MediaQuery.of(context).size.height *  0.03  ,
                 child: Container(
-                  height: MediaQuery.of(context).size.height * 0.19,
-                  padding: EdgeInsets.only(right: 8, left: 8, top: 12),
+                  constraints: BoxConstraints(
+                    minHeight: Get.height * 0.15
+                  ),
+                  padding: EdgeInsets.only(right: 8, left: 15, top: 12 ),
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(topLeft: Radius.circular(60), topRight: Radius.circular(60)),
-                color: purewhite,
+                  borderRadius: BorderRadius.only(topLeft: Radius.circular(40), topRight: Radius.circular(40)),
+                  color: purewhite
                 ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                      
-                      padding: EdgeInsets.symmetric(vertical: 4, horizontal: 6),
-                      decoration: BoxDecoration(
-                        border:Border.all(
-                          color: primary
-                        ),
-                        color: primary.withOpacity(0.1),
-                        borderRadius: BorderRadius.circular(4)
-                      ),
-                      child: Text(' Business Merchants',  style : bodytext_h5.copyWith(color: primary,),),
-                    ),
-                    VerticalSpace(value: 8),
-                    Text(name, style: bodytext_h2.copyWith(color: black_75, fontWeight: FontWeight.w700),),
-                    VerticalSpace(value:2),
-                    Container(
-                      child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          // Container(
-                          //   height: 34,
-                          //   child: Center(child: Icon(Icons.location_on,color: a_orannge,))),
-                          Expanded(child: Text(address, style: bodytext_h3.copyWith(color: black_75, height: 0), textAlign: TextAlign.center, )),
-                        ],
-                      ),
-                    ),
-                    // VerticalSpace(value: 2),
-                    // Text('Distance 0.5KM', style: bodytext_h5.copyWith(color: black_50, ), textAlign: TextAlign.center,),
-
-                  ],
-                ),
+                child: Text(name , style: bodytext_h1.copyWith(color: black_75, fontWeight: FontWeight.w700),),
               ))
 
                 ],
               )
+            ),
+            bottom: PreferredSize(
+              preferredSize: Size.fromHeight(0),
+              child: Container(
+                width: Get.width,
+                color: purewhite,
+                child: TabBar(
+                  onTap: (value){
+                   // print(value);
+                    tabarfunction(value);
+                  },
+                    isScrollable: true,
+                    unselectedLabelColor:black_25,
+                    indicatorColor: primary,
+                    labelColor: primary,
+                    labelStyle: bodytext_h2.copyWith(
+                color: black_75, fontWeight: FontWeight.w700),
+                    controller: tabcontroller,
+                    tabs: categoriesandproducts
+                .map((e) => Tab(
+                      text: e.name,
+                    ))
+                .toList()),
+              ),
             ),
           );
   }

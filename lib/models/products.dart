@@ -3,7 +3,7 @@ import 'package:onecall/sample/sampledata.dart';
 
 class Products {
    final String restaurantId;
-   final String category;
+   final String categoryId;
    final String productId;
    final String name;
    final String image;
@@ -14,9 +14,9 @@ class Products {
    final List<Variation>? variation;
 
   Products({
-    required this.productId,
     required this.restaurantId,
-    required this.category,
+    required this.categoryId,
+    required this.productId,
     required this.name,
     required this.image,
     required this.shortDescription,
@@ -25,8 +25,7 @@ class Products {
     this.discount,
     this.variation,
   });
-  
-   
+
 
 }
 
@@ -57,29 +56,36 @@ class DynamicOption {
   });
 
 
-
-  factory DynamicOption.fromJson(Map<String, dynamic> json) => DynamicOption(
-        name: json['name'],
-        imagePath: json['imagePath'],
-        value: json['value'],
-        isSelected: json['isSelected']
-      );
 }
 
 
 
-List<Restaurant> samplerestaurant = [
-  Restaurant(restaurantId: '0', name: 'Jolibee Isulan ', image: 'jolibee.png', circleimage: 'playstore.png', kilometerDistance: '0.5', address: 'Labore incididunt mollit dolore elit excepteur', longDescription: ' Et reprehenderit mollit aute id incididunt amet proident minim ullamco eiusmod minim nostrud eiusmod. Pariatur consectetur ea irure qui adip', openAt: '10:00 AM', closeAt: '11:00 PM', products: joilebeeproductsample , from: 'M', until: 'F' , categories: restocategory),
-  Restaurant(restaurantId: '1', name: 'Monday Isulan ', image: 'f1.jpg', circleimage: 'playstore.png', kilometerDistance: '0.5', address: 'Labore incididunt mollit dolore elit excepteur', longDescription: ' Et reprehenderit mollit aute id incididunt amet proident minim ullamco eiusmod minim nostrud eiusmod. Pariatur consectetur ea irure qui adip', openAt: '6:00 AM', closeAt: '5:00 PM', products: joilebeeproductsample , from: 'M', until: 'F' , categories:restocategory ),
-  Restaurant(restaurantId: '2', name: 'Carlitos Isulan ', image: 'f1.jpg', circleimage: 'playstore.png', kilometerDistance: '0.5', address: 'Labore incididunt mollit dolore elit excepteur', longDescription: ' Et reprehenderit mollit aute id incididunt amet proident minim ullamco eiusmod minim nostrud eiusmod. Pariatur consectetur ea irure qui adip', openAt: '7:30 AM', closeAt: '8:00 PM', products: joilebeeproductsample , from: 'M', until: 'F' , categories:restocategory ),
-];
-
 
 
 List<Products> joilebeeproductsample  = [
-  Products(productId: '0', restaurantId: '0', name: 'Fried Chicken ', image: 'jolibee.png', shortDescription: 'Labore incididunt mollit dolore elit excepteur.', longDescription: ' Et reprehenderit mollit aute id incididunt amet proident minim ullamco eiusmod minim nostrud eiusmod. Pariatur consectetur ea irure qui adipisicing ullamco cupidatat reprehenderit irure voluptate dolore magna.', price: 50, category: 'Chicken'),
-  Products(productId: '1', restaurantId: '1', name: 'Hot Spicky Chicke ', image: 'f1.jpg', shortDescription: 'Labore incididunt mollit dolore elit excepteur.', longDescription: ' Et reprehenderit mollit aute id incididunt amet proident minim ullamco eiusmod minim nostrud eiusmod. Pariatur consectetur ea irure qui adipisicing ullamco cupidatat reprehenderit irure voluptate dolore magna.', price: 50, category: 'Chicken'),
-  Products(productId: '2', restaurantId: '2', name: 'Long Chicken', image: 'f7.jpg', shortDescription: 'Labore incididunt mollit dolore elit excepteur.', longDescription: ' Et reprehenderit mollit aute id incididunt amet proident minim ullamco eiusmod minim nostrud eiusmod. Pariatur consectetur ea irure qui adipisicing ullamco cupidatat reprehenderit irure voluptate dolore magna.', price: 50, category: 'Drinks'),
+
+Products(restaurantId: '01', categoryId: '01', productId: '01', name: 'Fried Chicken 2 pc', image: 'f1.jpg', shortDescription: 'Occaecat cupidatat enim ex id laborum reprehenderit ullamco ipsum sunt esse consectetur es', longDescription: 'se tempor aliquip. Magna proident laboris irure amet magna aute esse adipisicing nostrud veniam qui incididunt ad aliqua. Ad mollit eiusmod mollit consectetur sint ad ipsum voluptat', price: 100, discount: 10, variation: addonvariation),
+Products(restaurantId: '02', categoryId: '02', productId: '02', name: 'Black Pepper Burger Cheese', image: 'f1.jpg', shortDescription: 'Occaecat cupidatat enim ex id laborum reprehenderit ullamco ipsum sunt esse consectetur es', longDescription: 'se tempor aliquip. Magna proident laboris irure amet magna aute esse adipisicing nostrud veniam qui incididunt ad aliqua. Ad mollit eiusmod mollit consectetur sint ad ipsum voluptat', price: 100, discount: 10, variation:addonvariation ),
+Products(restaurantId: '03', categoryId: '03', productId: '03', name: 'Black Pepper Burger Cheese', image: 'f1.jpg', shortDescription: 'Occaecat cupidatat enim ex id laborum reprehenderit ullamco ipsum sunt esse consectetur es', longDescription: 'se tempor aliquip. Magna proident laboris irure amet magna aute esse adipisicing nostrud veniam qui incididunt ad aliqua. Ad mollit eiusmod mollit consectetur sint ad ipsum voluptat', price: 100, discount: 10, variation:addonvariation ),
+Products(restaurantId: '03', categoryId: '03', productId: '03', name: 'Black Pepper Burger Cheese', image: 'f1.jpg', shortDescription: 'Occaecat cupidatat enim ex id laborum reprehenderit ullamco ipsum sunt esse consectetur es', longDescription: 'se tempor aliquip. Magna proident laboris irure amet magna aute esse adipisicing nostrud veniam qui incididunt ad aliqua. Ad mollit eiusmod mollit consectetur sint ad ipsum voluptat', price: 100, discount: 10, variation:addonvariation ),
+Products(restaurantId: '03', categoryId: '03', productId: '03', name: 'Black Pepper Burger Cheese', image: 'f1.jpg', shortDescription: 'Occaecat cupidatat enim ex id laborum reprehenderit ullamco ipsum sunt esse consectetur es', longDescription: 'se tempor aliquip. Magna proident laboris irure amet magna aute esse adipisicing nostrud veniam qui incididunt ad aliqua. Ad mollit eiusmod mollit consectetur sint ad ipsum voluptat', price: 100, discount: 10, variation:addonvariation ),
+Products(restaurantId: '03', categoryId: '03', productId: '03', name: 'Black Pepper Burger Cheese', image: 'f1.jpg', shortDescription: 'Occaecat cupidatat enim ex id laborum reprehenderit ullamco ipsum sunt esse consectetur es', longDescription: 'se tempor aliquip. Magna proident laboris irure amet magna aute esse adipisicing nostrud veniam qui incididunt ad aliqua. Ad mollit eiusmod mollit consectetur sint ad ipsum voluptat', price: 100, discount: 10, variation:addonvariation ),
+Products(restaurantId: '03', categoryId: '03', productId: '03', name: 'Black Pepper Burger Cheese', image: 'f1.jpg', shortDescription: 'Occaecat cupidatat enim ex id laborum reprehenderit ullamco ipsum sunt esse consectetur es', longDescription: 'se tempor aliquip. Magna proident laboris irure amet magna aute esse adipisicing nostrud veniam qui incididunt ad aliqua. Ad mollit eiusmod mollit consectetur sint ad ipsum voluptat', price: 100, discount: 10, variation:addonvariation ),
+Products(restaurantId: '03', categoryId: '03', productId: '03', name: 'Black Pepper Burger Cheese', image: 'f1.jpg', shortDescription: 'Occaecat cupidatat enim ex id laborum reprehenderit ullamco ipsum sunt esse consectetur es', longDescription: 'se tempor aliquip. Magna proident laboris irure amet magna aute esse adipisicing nostrud veniam qui incididunt ad aliqua. Ad mollit eiusmod mollit consectetur sint ad ipsum voluptat', price: 100, discount: 10, variation:addonvariation ),
+Products(restaurantId: '03', categoryId: '03', productId: '03', name: 'Black Pepper Burger Cheese', image: 'f1.jpg', shortDescription: 'Occaecat cupidatat enim ex id laborum reprehenderit ullamco ipsum sunt esse consectetur es', longDescription: 'se tempor aliquip. Magna proident laboris irure amet magna aute esse adipisicing nostrud veniam qui incididunt ad aliqua. Ad mollit eiusmod mollit consectetur sint ad ipsum voluptat', price: 100, discount: 10, variation:addonvariation ),
+Products(restaurantId: '03', categoryId: '03', productId: '03', name: 'Black Pepper Burger Cheese', image: 'f1.jpg', shortDescription: 'Occaecat cupidatat enim ex id laborum reprehenderit ullamco ipsum sunt esse consectetur es', longDescription: 'se tempor aliquip. Magna proident laboris irure amet magna aute esse adipisicing nostrud veniam qui incididunt ad aliqua. Ad mollit eiusmod mollit consectetur sint ad ipsum voluptat', price: 100, discount: 10, variation:addonvariation ),
+Products(restaurantId: '03', categoryId: '03', productId: '03', name: 'Black Pepper Burger Cheese', image: 'f1.jpg', shortDescription: 'Occaecat cupidatat enim ex id laborum reprehenderit ullamco ipsum sunt esse consectetur es', longDescription: 'se tempor aliquip. Magna proident laboris irure amet magna aute esse adipisicing nostrud veniam qui incididunt ad aliqua. Ad mollit eiusmod mollit consectetur sint ad ipsum voluptat', price: 100, discount: 10, variation:addonvariation ),
+Products(restaurantId: '03', categoryId: '03', productId: '03', name: 'Black Pepper Burger Cheese', image: 'f1.jpg', shortDescription: 'Occaecat cupidatat enim ex id laborum reprehenderit ullamco ipsum sunt esse consectetur es', longDescription: 'se tempor aliquip. Magna proident laboris irure amet magna aute esse adipisicing nostrud veniam qui incididunt ad aliqua. Ad mollit eiusmod mollit consectetur sint ad ipsum voluptat', price: 100, discount: 10, variation:addonvariation ),
+Products(restaurantId: '03', categoryId: '03', productId: '03', name: 'Black Pepper Burger Cheese', image: 'f1.jpg', shortDescription: 'Occaecat cupidatat enim ex id laborum reprehenderit ullamco ipsum sunt esse consectetur es', longDescription: 'se tempor aliquip. Magna proident laboris irure amet magna aute esse adipisicing nostrud veniam qui incididunt ad aliqua. Ad mollit eiusmod mollit consectetur sint ad ipsum voluptat', price: 100, discount: 10, variation:addonvariation ),
+  
+];
+
+List<Products> minuteproductsample  = [
+
+Products(restaurantId: '01', categoryId: '01', productId: '01', name: 'a', image: 'f1.jpg', shortDescription: 'Occaecat cupidatat enim ex id laborum reprehenderit ullamco ipsum sunt esse consectetur es', longDescription: 'se tempor aliquip. Magna proident laboris irure amet magna aute esse adipisicing nostrud veniam qui incididunt ad aliqua. Ad mollit eiusmod mollit consectetur sint ad ipsum voluptat', price: 100, discount: 10, variation: addonvariation),
+Products(restaurantId: '02', categoryId: '02', productId: '02', name: 'b', image: 'f1.jpg', shortDescription: 'Occaecat cupidatat enim ex id laborum reprehenderit ullamco ipsum sunt esse consectetur es', longDescription: 'se tempor aliquip. Magna proident laboris irure amet magna aute esse adipisicing nostrud veniam qui incididunt ad aliqua. Ad mollit eiusmod mollit consectetur sint ad ipsum voluptat', price: 100, discount: 10, variation:addonvariation ),
+Products(restaurantId: '03', categoryId: '03', productId: '03', name: 'c', image: 'f1.jpg', shortDescription: 'Occaecat cupidatat enim ex id laborum reprehenderit ullamco ipsum sunt esse consectetur es', longDescription: 'se tempor aliquip. Magna proident laboris irure amet magna aute esse adipisicing nostrud veniam qui incididunt ad aliqua. Ad mollit eiusmod mollit consectetur sint ad ipsum voluptat', price: 100, discount: 10, variation:addonvariation ),
+  
 ];
 
 
@@ -101,6 +107,8 @@ List<DynamicOption> sizecollection = [
  DynamicOption(name: 'l', imagePath: 'f3.jpg', value: 'l',  isSelected:  true),
  DynamicOption(name: 'xl', imagePath: 'f3.jpg', value: 'xl',  isSelected:  true),
 ]; 
+
+
 
 
 // enum SelectionType {

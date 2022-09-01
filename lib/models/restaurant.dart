@@ -12,8 +12,7 @@ class Restaurant {
   final String closeAt;
   final String from;
   final String until;
-  final List<String> categories;
-  final List<Products> products;
+  final List<CategoriesWithProduct> categories; 
 
   Restaurant({
     required this.restaurantId,
@@ -27,38 +26,53 @@ class Restaurant {
     required this.closeAt,
     required this.from,
     required this.until,
-    required this.products,
     required this.categories,
-    
   });
 
- 
 
-  factory Restaurant.fromJson(Map<String, dynamic> json) => Restaurant(
-        restaurantId: json['restaurantId'],
-        name: json['name'],
-        image: json['image'],
-        circleimage: json['circleimage'],
-        kilometerDistance: json['kilometerDistance'],
-        address: json['address'],
-        longDescription: json['longDescription'],
-        openAt: json['openAt'],
-        closeAt: json['closeAt'],
-        from: json['from'],
-        until: json['until'],
-        products: json['products'],
-        categories: json['categories']
-      );
-
-  Map<String, dynamic> toJson() => {
-        'restaurantId': restaurantId,
-        'name': name,
-        'image': image,
-        'kilometerDistance': kilometerDistance,
-        'address': address,
-        'longDescription': longDescription,
-        'openAt': openAt,
-        'closeAt': closeAt,
-        'products': products,
-      };
 }
+
+class CategoriesWithProduct {
+  final String name;
+  final String categoryId;
+  final List<Products> products; 
+
+  CategoriesWithProduct({
+    required this.name,
+    required this.categoryId,
+    required this.products,
+  });
+
+
+
+
+
+}
+
+List<Restaurant> samplerestaurant = [
+  Restaurant(restaurantId: '01', name: 'Jolibee Isulan' , image: 'jolibee.png', circleimage: 'playstore.png', kilometerDistance: '0.5', address: 'Labore incididunt mollit dolore elit excepteur', longDescription: 'Labore incididunt mollit dolore elit excepteurLabore incididunt mollit dolore elit excepteur', openAt: '10:00 AM', closeAt: '10:00 PM', from: 'M', until: 'F', categories: jolibeecategory),
+  Restaurant(restaurantId: '02', name: 'Minuter Burgder' , image: 'f2.jpg', circleimage: 'playstore.png', kilometerDistance: '0.5', address: 'Labore incididunt mollit dolore elit excepteur', longDescription: 'Labore incididunt mollit dolore elit excepteurLabore incididunt mollit dolore elit excepteur', openAt: '8:00 AM', closeAt: '10:00 PM', from: 'M', until: 'F', categories: minutecategory),
+  Restaurant(restaurantId: '03', name: 'Monday' , image: 'f3.jpg', circleimage: 'playstore.png', kilometerDistance: '0.5', address: 'Labore incididunt mollit dolore elit excepteur', longDescription: 'Labore incididunt mollit dolore elit excepteurLabore incididunt mollit dolore elit excepteur', openAt: '7:00 AM', closeAt: '10:00 PM', from: 'M', until: 'F', categories: mondaycategory),
+];
+
+
+
+List<CategoriesWithProduct> jolibeecategory = [
+  CategoriesWithProduct(name: 'Chicken', products: joilebeeproductsample, categoryId: '01' ),
+  CategoriesWithProduct(name: 'Drinks', products: minuteproductsample, categoryId: '01' ),
+  CategoriesWithProduct(name: 'Burger', products: minuteproductsample, categoryId: '01' ),
+];
+
+List<CategoriesWithProduct> minutecategory = [
+  CategoriesWithProduct(name: 'Chicken', products: joilebeeproductsample, categoryId: '01' ),
+  CategoriesWithProduct(name: 'Drinks', products: joilebeeproductsample, categoryId: '02' ),
+  CategoriesWithProduct(name: 'Burger', products: joilebeeproductsample, categoryId: '03' ),
+  CategoriesWithProduct(name: 'Pizza', products: joilebeeproductsample, categoryId: '03' ),
+];
+
+List<CategoriesWithProduct> mondaycategory = [
+  CategoriesWithProduct(name: 'Chicken', products: joilebeeproductsample, categoryId: '01' ),
+  CategoriesWithProduct(name: 'Drinks', products: joilebeeproductsample, categoryId: '02' ),
+  CategoriesWithProduct(name: 'Burger', products: joilebeeproductsample, categoryId: '03' ),
+];
+
