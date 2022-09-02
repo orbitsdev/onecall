@@ -4,6 +4,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:get/get.dart';
 
 import 'package:onecall/assistant/assistant.dart';
+import 'package:onecall/body/restaurant/moredetails_page.dart';
 import 'package:onecall/body/restaurant/restaurant_widgets/restaurant_app_bar.dart';
 import 'package:onecall/body/restaurant/restaurant_widgets/restaurant_grid_card.dart';
 import 'package:onecall/body/restaurant/restaurant_widgets/restaurant_tabs.dart';
@@ -68,7 +69,50 @@ void changeCategory(int index) {
 
                 ),),
 
-        
+
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+      floatingActionButton: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: (){
+
+          
+              Get.to(()=>  MoredetailsPage(
+                address: widget.restaurant!.address,
+                name: widget.restaurant!.name ,
+                image: widget.restaurant!.image,
+                kilometerDistance: widget.restaurant!.kilometerDistance ,
+                longDescription: widget.restaurant!.longDescription ,
+                openAt: widget.restaurant!.openAt ,
+                closeAt: widget.restaurant!.closeAt ,
+                from: widget.restaurant!.from,
+                until: widget.restaurant!.until,
+              ));
+          },
+          focusColor: black_05,
+          child: Container(
+            height: 40,
+            width: 40,
+            decoration: BoxDecoration(
+            color: primary,
+            border: Border.all(
+              width: 1,
+              color: purewhite
+            ),
+            borderRadius: BorderRadius.circular(40 * 2),
+            boxShadow: [
+              BoxShadow(
+                blurRadius: 4,
+                spreadRadius: 1,
+                offset: Offset(0, 4),
+                color: Colors.black.withOpacity(0.2)
+              )
+            ]
+            ),
+            child: Center(child: Icon(Icons.question_mark_outlined, color: purewhite,),),
+          ),
+        ),
+      )
       ),
     );
   }

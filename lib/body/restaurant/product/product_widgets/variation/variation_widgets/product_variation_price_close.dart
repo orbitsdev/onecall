@@ -1,73 +1,65 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import 'package:onecall/assistant/assistant.dart';
+import 'package:onecall/constant/controllers.dart';
 import 'package:onecall/constant/ui.dart';
 import 'package:onecall/helperwidgets/horizontal_space.dart';
+import 'package:onecall/helperwidgets/vertical_space.dart';
 import 'package:onecall/widgets/circle_button.dart';
 
 class ProductVariationPriceClose extends StatelessWidget {
-const ProductVariationPriceClose({ Key? key }) : super(key: key);
+final String name;
+final String price;
+final String image;
+  const ProductVariationPriceClose({
+    Key? key,
+    required this.name,
+    required this.price,
+    required this.image,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context){
     return  Container(
-              padding: EdgeInsets.only(top: 8, bottom: 8, right: 8, left: 24),
+      padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 24,),
+      constraints: BoxConstraints(
+        minHeight: 100,
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Expanded(
+            child: Container(
+              height: 100,
+              width: Get.width,
+              color: Colors.amber,
+              child: Image.asset(Assistant().fromImages(image),fit: BoxFit.cover,),
+            ),
+          ),
+
+          Expanded(
+            child: Container(
+              padding: EdgeInsets.only(left: 8),
+              width: Get.width,
               constraints: BoxConstraints(
-                minHeight: 50,
+                minHeight: 100,
               ),
-              // color: Colors.blue,
-              child: Stack(children: [
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Expanded(
-                      child: Container(
-                          height: 140,
-                          width: 140,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(4),
-                            color: Colors.amber,
-                          ),
-                          child: ClipRRect(
-                              borderRadius: BorderRadius.circular(4),
-                              child: Image.asset(
-                                Assistant().fromImages(
-                                  'f2.jpg',
-                                ),
-                                fit: BoxFit.fill,
-                              ))),
-                    ),
-                    HorizontalSpace(value: 12),
-                    Expanded(
-                      child: Container(
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'P 10000',
-                              style: bodytext_h1.copyWith(color: primary),
-                            )
-                          ],
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-                Positioned(
-                  top: -5,
-                  right: -5,
-                  child: CircleButton(
-                    icon: Icons.close,
-                    function: () {
-                      Get.back();
-                    },
-                    iconcolor: black_25,
-                  ),
-                )
-              ]),
-            );
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(name , style: bodytext_h2,),
+                  VerticalSpace(value: 4),
+                  Text('₱ ${price}', style: bodytext_h2.copyWith(color: primary),),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+
+    );
 
   }
 }

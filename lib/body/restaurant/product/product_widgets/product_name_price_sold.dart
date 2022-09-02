@@ -54,6 +54,7 @@ final String sold;
                                                   color: primary,
                                                 ),
                                                 children: [
+                                                  TextSpan(text: ' '),
                                                   TextSpan(
                                                       text: '₱ ${price}',
                                                       style: bodytext_h3.copyWith(

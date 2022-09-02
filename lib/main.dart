@@ -9,6 +9,7 @@ import 'package:onecall/auth/signup_screen.dart';
 import 'package:onecall/auth/testsliver.dart';
 import 'package:onecall/bindings/auth_binding.dart';
 import 'package:onecall/body/cart_screen.dart';
+import 'package:onecall/body/restaurant/moredetails_page.dart';
 import 'package:onecall/body/restaurant/restaurant_details_screen.dart';
 import 'package:onecall/body/restaurant/product/resto_product_details_screen.dart';
 import 'package:onecall/body/setup_information_for_google_screen.dart';
@@ -86,6 +87,9 @@ final bool isBoardingShowedOnce;
      //OnboardingScreen(), 
       //isBoardingShowedOnce ? SigninScreen() :  OnboardingScreen()
       HomeScreen(),
+
+     //MoredetailsPage(),
+
       getPages: [
         GetPage(name: StartingScreen.screenName,  page: ()=> StartingScreen(),),
         GetPage(name: DataPrivacyScreen.screenName,  page: ()=> DataPrivacyScreen(),),
@@ -98,6 +102,7 @@ final bool isBoardingShowedOnce;
         GetPage(name: AccountNoticeScreen.screenName , page: ()=> const AccountNoticeScreen(), ),
         GetPage(name: HomeScreen.screenName , page: ()=> const HomeScreen(), binding: AuthBinding()),
         GetPage(name: RestaurantDetailsScreen.screenName , page: ()=> const RestaurantDetailsScreen(), binding: AuthBinding()),
+        GetPage(name: MoredetailsPage.screenName , page: ()=> MoredetailsPage() , binding: AuthBinding()),
         GetPage(name: RestoProductDetailsScreen.screenName , page: ()=> const RestoProductDetailsScreen(), binding: AuthBinding()),
         GetPage(name: CartScreen.screenName , page: ()=> CartScreen() , binding: AuthBinding()),
       ],

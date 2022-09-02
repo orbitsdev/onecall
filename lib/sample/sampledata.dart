@@ -92,58 +92,7 @@ List<String> collection;
 
 
 
-List<DynamicExtra> sampleDynamicExtra = [
-  
-  DynamicExtra(title: 'Drink Size', type: 'single', withImage: true ,optionscollection: sizesample),
-  DynamicExtra(title: 'Adds on', type: 'multiple', withImage: true, optionscollection: addsonsample),
-  DynamicExtra(title: 'Variations ', type: 'multiple', withImage: false, optionscollection: samplehotdog),
-
-];
-
-
-List<DynamicOption> addsonsample = [
-  DynamicOption('Egg', 'egg', false),
-  DynamicOption('Bacon', 'bacon', true),
-  DynamicOption('Cheese', 'Cheese', false),
-];
-
-
-List<DynamicOption> sizesample = [
-  DynamicOption('Egg', 'egg', false),
-  DynamicOption('Bacon', 'bacon', true),
-  DynamicOption('Cheese', 'Cheese', false),
-];
-
-List<DynamicOption> samplehotdog = [
-  DynamicOption('hot', 'hot', false),
-  DynamicOption('chili', 'bacon', true),
-  DynamicOption('mions', 'Cheese', false),
-];
 
 
 
-class DynamicExtra {
 
-
-  final String title;
-  final String type;
-  final bool withImage;
-  List<DynamicOption> optionscollection;
-
-  DynamicExtra({
-    required this.title,
-    required this.type,
-    required this.withImage,
-    required this.optionscollection,
-  });
-
-}
-
-class DynamicOption {
-  final String title;
-  final String value;
-  final bool isSelected;
-
-  DynamicOption(this.title, this.value, this.isSelected);
-
-}

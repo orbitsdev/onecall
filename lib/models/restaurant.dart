@@ -1,4 +1,4 @@
-import 'package:onecall/models/products.dart';
+import 'package:onecall/models/product.dart';
 
 class Restaurant {
   final String restaurantId;
@@ -35,7 +35,7 @@ class Restaurant {
 class CategoriesWithProduct {
   final String name;
   final String categoryId;
-  final List<Products> products; 
+  final List<Product> products; 
 
   CategoriesWithProduct({
     required this.name,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:onecall/assistant/assistant.dart';
 import 'package:onecall/constant/ui.dart';
 import 'package:onecall/helperwidgets/horizontal_space.dart';
+import 'package:onecall/models/product.dart';
 
 import 'package:onecall/sample/sampledata.dart';
 
@@ -49,7 +50,7 @@ final DynamicOption option;
                     )),
                 HorizontalSpace(value: 4),
                 Text(
-                  '${option.title}',
+                  '${option.name}',
                   style: bodytext_h3.copyWith(
                       color: option.isSelected ? primary : black_25),
                 ),

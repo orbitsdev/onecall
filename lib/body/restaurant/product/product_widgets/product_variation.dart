@@ -1,19 +1,31 @@
 import 'package:flutter/material.dart';
+
 import 'package:onecall/assistant/assistant.dart';
+import 'package:onecall/constant/controllers.dart';
 import 'package:onecall/constant/ui.dart';
 import 'package:onecall/dialogs/pop.dart';
 import 'package:onecall/helperwidgets/horizontal_space.dart';
 import 'package:onecall/helperwidgets/vertical_space.dart';
+import 'package:onecall/models/cart_product.dart';
+import 'package:onecall/models/product.dart';
 import 'package:onecall/sample/sampledata.dart';
 
 class ProductVariation extends StatelessWidget {
-const ProductVariation({ Key? key }) : super(key: key);
+
+final Product product;
+  const ProductVariation({
+    Key? key,
+    required this.product,
+  }) : super(key: key);
+
+
 
   @override
   Widget build(BuildContext context){
     return GestureDetector(
                       onTap: (){
-                        Pop.showProductVariation(context);
+
+                        restaurantcontroller.setCartProduct(context, product);
                       },
                       child: Container(
                         width: MediaQuery.of(context).size.width,
@@ -28,7 +40,7 @@ const ProductVariation({ Key? key }) : super(key: key);
                           children: [
                             RichText(
                                 text: TextSpan(
-                                    text: 'Select Variation',
+                                    text: 'Select ${product.variation[0].name}',
                                     style: bodytext_h2.copyWith(color: black_75,),
                                     children: [
                                   // TextSpan(
@@ -49,7 +61,7 @@ const ProductVariation({ Key? key }) : super(key: key);
                                 shrinkWrap: true,
                                   // physics: NeverScrollableScrollPhysics(),
                                   scrollDirection: Axis.horizontal,
-                                  itemCount: sampleproduct.length,
+                                  itemCount: product.variation[0].dynamicOption.length,
                                   itemBuilder: (context, index) =>Container(
                                     padding: EdgeInsets.all(6),
                                     decoration: BoxDecoration(
@@ -64,13 +76,13 @@ const ProductVariation({ Key? key }) : super(key: key);
                                        Container(
                                         height: 100,
                                         width: 60,
-                                        child: Image.asset(Assistant().fromImages('f3.jpg',), fit:  BoxFit.fill,),
                                         decoration: BoxDecoration(
                                           
                                           borderRadius: BorderRadius.circular(4),),
+                                        child: Image.asset(Assistant().fromImages(product.variation[0].dynamicOption[index].imagePath,), fit:  BoxFit.fill,),
                                        ),
                                        HorizontalSpace(value: 8),
-                                        Text('Product name ', style: bodytext_h3.copyWith(color: black_75),)
+                                        Text(product.variation[0].dynamicOption[index].name, style: bodytext_h3.copyWith(color: black_75),)
                                       ],
                                     ),
                                   )),)

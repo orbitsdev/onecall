@@ -7,13 +7,12 @@ import 'package:onecall/body/restaurant/product/resto_product_details_screen.dar
 import 'package:onecall/constant/ui.dart';
 import 'package:onecall/helperwidgets/vertical_space.dart';
 import 'package:onecall/models/product.dart';
-import 'package:onecall/models/products.dart';
 import 'package:onecall/models/restaurant.dart';
 import 'package:onecall/widgets/circle_button.dart';
 
 class RestaurantGridCard extends StatelessWidget {
 
-final List<Products> productcollection;
+final List<Product> productcollection;
 final ScrollController scrollController;
 
   const RestaurantGridCard({super.key, required this.productcollection, required this.scrollController});
@@ -97,7 +96,7 @@ final ScrollController scrollController;
                                     textAlign: TextAlign.center,
                                     ),
                                     VerticalSpace(value: 8),
-                                    Text('₱ ${productcollection[index].price}', style: bodytext_h3.copyWith(color: primary, fontWeight: FontWeight.bold),),
+                                    Text( '₱ ' + productcollection[index].price.toStringAsFixed(0), style: bodytext_h3.copyWith(color: primary, fontWeight: FontWeight.bold),),
                                         
                                     ],
                                 ),

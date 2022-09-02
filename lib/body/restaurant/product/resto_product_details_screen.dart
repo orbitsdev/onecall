@@ -7,7 +7,7 @@ import 'package:onecall/constant/ui.dart';
 import 'package:onecall/dialogs/pop.dart';
 import 'package:onecall/helperwidgets/horizontal_space.dart';
 import 'package:onecall/helperwidgets/vertical_space.dart';
-import 'package:onecall/models/products.dart';
+import 'package:onecall/models/product.dart';
 import 'package:onecall/sample/sampledata.dart';
 import 'package:onecall/widgets/circle_button.dart';
 import 'package:onecall/widgets/notification_icon.dart';
@@ -19,7 +19,7 @@ import 'product_widgets/product_variation.dart';
 class RestoProductDetailsScreen extends StatelessWidget {
   static String screenName = "/product_details";
 
-  final Products? product;
+  final Product? product;
   const RestoProductDetailsScreen({
     Key? key,
     this.product,
@@ -44,8 +44,8 @@ class RestoProductDetailsScreen extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     ProductNamePriceSold(name: product!.name, price: product!.price.toString() , discountprice: product!.discount.toString(), sold: 205.toString()),
-                    if(product!.variation!.length > 0 ) ProductVariation(),
-                    ProductDescription(),
+                    if(product!.variation.isNotEmpty ) ProductVariation(product: product as Product),
+                    ProductDescription(discription: product!.longDescription,),
                   ],
                 ),
               )

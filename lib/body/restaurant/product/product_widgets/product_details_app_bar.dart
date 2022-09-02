@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:onecall/assistant/assistant.dart';
 import 'package:onecall/constant/ui.dart';
 import 'package:onecall/helperwidgets/horizontal_space.dart';
@@ -21,7 +22,9 @@ const ProductDetailsAppBar({ Key? key }) : super(key: key);
                     CircleButton(
                       bgcolor: Colors.black.withOpacity(0.5),
                       icon: Icons.arrow_back_ios_rounded,
-                      function: () {},
+                      function: () {
+                        Get.back();
+                      },
                     ),
                     Row(
                       children: [

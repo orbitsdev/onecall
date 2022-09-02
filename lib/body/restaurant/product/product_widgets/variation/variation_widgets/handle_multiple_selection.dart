@@ -3,13 +3,13 @@ import 'package:onecall/body/restaurant/product/product_widgets/variation/variat
 
 import 'package:onecall/constant/ui.dart';
 import 'package:onecall/helperwidgets/vertical_space.dart';
-import 'package:onecall/sample/sampledata.dart';
+import 'package:onecall/models/product.dart';
 
 class ProductVariationContent extends StatelessWidget {
-  final List<DynamicExtra> dynamicextracollection;
+  final List<Variation> varations;
   const ProductVariationContent({
     Key? key,
-    required this.dynamicextracollection,
+    required this.varations,
   }) : super(key: key);
 
   @override
@@ -17,28 +17,28 @@ class ProductVariationContent extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
-      children: dynamicextracollection
+      children: varations
           .map(
-            (extra) => Container(
+            (variation) => Container(
               width: MediaQuery.of(context).size.width,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    extra.title,
+                    variation.name,
                     style: bodytext_h2.copyWith(color: black_75),
                   ),
                   const VerticalSpace(value: 6),
                   Wrap(
                     alignment: WrapAlignment.start,
                     crossAxisAlignment: WrapCrossAlignment.start,
-                    children: extra.optionscollection
+                    children: variation.dynamicOption
                         .map((e) => GestureDetector
                         (
                           onTap: (){
-                            print(e.title);
+                            print(e.name);
                           },
-                          child: OptionCard(option: e)))
+                          child: OptionCard(option:e)))
                         .toList(),
                   ),
                 ],
