@@ -4,6 +4,7 @@ import 'package:onecall/body/restaurant/product/product_widgets/variation/variat
 import 'package:onecall/constant/ui.dart';
 import 'package:onecall/helperwidgets/vertical_space.dart';
 import 'package:onecall/models/product.dart';
+import 'package:onecall/models/variation.dart';
 
 class ProductVariationContent extends StatelessWidget {
   final List<Variation> varations;

@@ -1,4 +1,5 @@
 import 'package:onecall/models/product.dart';
+import 'package:onecall/models/variation.dart';
 
 class CartProduct {
   String? restaurantId;

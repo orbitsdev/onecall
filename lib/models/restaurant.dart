@@ -1,4 +1,6 @@
+import 'package:onecall/models/category_with_product.dart';
 import 'package:onecall/models/product.dart';
+import 'package:onecall/sample/sampledata.dart';
 
 class Restaurant {
   final String restaurantId;
@@ -32,22 +34,7 @@ class Restaurant {
 
 }
 
-class CategoriesWithProduct {
-  final String name;
-  final String categoryId;
-  final List<Product> products; 
 
-  CategoriesWithProduct({
-    required this.name,
-    required this.categoryId,
-    required this.products,
-  });
-
-
-
-
-
-}
 
 List<Restaurant> samplerestaurant = [
   Restaurant(restaurantId: '01', name: 'Jolibee Isulan' , image: 'jolibee.png', circleimage: 'playstore.png', kilometerDistance: '0.5', address: 'Labore incididunt mollit dolore elit excepteur', longDescription: 'Labore incididunt mollit dolore elit excepteurLabore incididunt mollit dolore elit excepteur', openAt: '10:00 AM', closeAt: '10:00 PM', from: 'M', until: 'F', categories: jolibeecategory),

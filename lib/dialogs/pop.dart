@@ -192,7 +192,7 @@ class Pop {
                         (
                           onTap: (){
                               
-                              rcontroller.handleVariation(variation.value.name, option.value.name);
+                              rcontroller.addVariation(variation.value.variationId, option.value);
 
                           },  
                           child: OptionCard(option:option.value)))

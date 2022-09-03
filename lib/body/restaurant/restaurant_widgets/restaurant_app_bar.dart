@@ -5,6 +5,7 @@ import 'package:onecall/assistant/assistant.dart';
 import 'package:onecall/constant/ui.dart';
 import 'package:onecall/helperwidgets/horizontal_space.dart';
 import 'package:onecall/helperwidgets/vertical_space.dart';
+import 'package:onecall/models/category_with_product.dart';
 import 'package:onecall/models/restaurant.dart';
 import 'package:onecall/widgets/circle_button.dart';
 import 'package:onecall/widgets/notification_icon.dart';
