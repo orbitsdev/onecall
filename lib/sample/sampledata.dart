@@ -124,7 +124,8 @@ Product(restaurantId: '03', categoryId: '03', productId: '03', name: 'c', image:
 
 List<Variation> addonvariation = [
   Variation( required: false, variationId: '01', name: 'Add on', selectionType: 'multiple', dynamicOption: addsoncollection),
-  Variation(required: true, variationId: '02', name: 'Drink Size', selectionType: 'single', dynamicOption: sizecollection)
+  Variation(required: true, variationId: '02', name: 'Ordy Type', selectionType: 'single_optional', dynamicOption: single_optional_collection),
+  Variation(required: true, variationId: '03', name: 'Drink Size', selectionType: 'single_required', dynamicOption: required_single_collection)
 ]; 
 
 
@@ -132,10 +133,16 @@ List<DynamicOption> addsoncollection = [
  DynamicOption(name: 'egg', imagePath: 'f2.jpg', value: 5, isSelected: false),
  DynamicOption(name: 'bacon', imagePath: 'f1.jpg', value: 7, isSelected: false),
  DynamicOption(name: 'cheese', imagePath: 'f3.jpg', value: 3, isSelected: false),
+];
+
+List<DynamicOption> single_optional_collection = [
+ DynamicOption(name: 'regular', imagePath: 'f3.jpg', value: 3, isSelected: false),
+ DynamicOption(name: 'expecial', imagePath: 'f2.jpg', value: 5, isSelected: false),
+ DynamicOption(name: 'super sepcical', imagePath: 'f1.jpg', value: 7, isSelected: false),
 ]; 
 
-List<DynamicOption> sizecollection = [
- DynamicOption(name: 's', imagePath: 'f2.jpg', value: 25,  isSelected:  false),
+List<DynamicOption> required_single_collection = [
+ DynamicOption(name: 's', imagePath: 'f2.jpg', value: 25,  isSelected:  true),
  DynamicOption(name: 'm', imagePath: 'f1.jpg', value: 35,  isSelected:  false),
  DynamicOption(name: 'l', imagePath: 'f3.jpg', value: 40,  isSelected:  false),
  DynamicOption(name: 'xl', imagePath: 'f3.jpg', value: 50,  isSelected:  false),

@@ -70,7 +70,8 @@ class RestaurantController extends GetxController {
       var variationlist = newproduct.value.variation!.singleWhere((element) => element.variationId == variationId);
       var indexOfVariationList = newproduct.value.variation!.indexWhere((element) => element.variationId == variationId);
       var indexOfSelectedOption = variationlist.dynamicOption.indexWhere((element) => element.name == option.name);
-    
+         print(variationlist.selectionType);   
+
       if(variationlist.selectionType == 'multiple'){
       variationlist.dynamicOption[indexOfSelectedOption].isSelected = !variationlist.dynamicOption[indexOfSelectedOption].isSelected;
    
@@ -87,24 +88,53 @@ class RestaurantController extends GetxController {
            update();
       }
 
-      if(variationlist.selectionType == 'single'){
-        
+      if(variationlist.selectionType == 'single_optional'){
 
-        int indexOfActiveOption =  newproduct.value.variation![indexOfVariationList].dynamicOption.indexWhere((element) => true);
-        print(indexOfActiveOption);
-        if(indexOfActiveOption != -1){
-          print('emppty');
-          newproduct.value.variation![indexOfVariationList].dynamicOption[indexOfSelectedOption].isSelected =   !newproduct.value.variation![indexOfVariationList].dynamicOption[indexOfSelectedOption].isSelected;
+
+             List<DynamicOption> activeoptions = variationlist.dynamicOption.where((element)=> element.isSelected ==true ).toList();
+           
+             if(activeoptions.length >1){
+                activeoptions.asMap().forEach((key, option) { 
+                  if(key != 0 ){
+                    option.isSelected = false;
+                  }
+
+                });
+                update();
+             }else if(activeoptions.length == 1){
+
+                 int indexOfActiveOption =  newproduct.value.variation![indexOfVariationList].dynamicOption.indexWhere((element)=> element.isSelected);
+
+                 if(indexOfActiveOption == indexOfSelectedOption){
+                     newproduct.value.variation![indexOfVariationList].dynamicOption[indexOfSelectedOption].isSelected = ! newproduct.value.variation![indexOfVariationList].dynamicOption[indexOfSelectedOption].isSelected;  
+
+                 }else{
+                    newproduct.value.variation![indexOfVariationList].dynamicOption[indexOfActiveOption].isSelected =   false;
+                    newproduct.value.variation![indexOfVariationList].dynamicOption[indexOfSelectedOption].isSelected = true;
+
+                 }
+                 update();
+              
         }else{
-          
-          newproduct.value.variation![indexOfVariationList].dynamicOption[indexOfActiveOption].isSelected = false;
-          newproduct.value.variation![indexOfVariationList].dynamicOption[indexOfSelectedOption].isSelected =   !newproduct.value.variation![indexOfVariationList].dynamicOption[indexOfSelectedOption].isSelected;
+                 
+                 newproduct.value.variation![indexOfVariationList].dynamicOption[indexOfSelectedOption].isSelected =  !newproduct.value.variation![indexOfVariationList].dynamicOption[indexOfSelectedOption].isSelected;    
+                update();
+
         }
-    
-    
-          
-update();
+
+
+     
+        
       }
+
+        if(variationlist.selectionType == "single_required"){
+          print(variationlist.selectionType);
+          int indexOfActiveOption =  newproduct.value.variation![indexOfVariationList].dynamicOption.indexWhere((element) => true);
+          newproduct.value.variation![indexOfVariationList].dynamicOption[indexOfActiveOption].isSelected =   false;
+          newproduct.value.variation![indexOfVariationList].dynamicOption[indexOfSelectedOption].isSelected =   true;
+          update();
+      
+        }
  
       
   }
